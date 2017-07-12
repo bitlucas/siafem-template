@@ -1,0 +1,568 @@
+<form class="form-inline" [formGroup]="empenhoForm" (ngSubmit)="onSubmit()">
+
+<wizard navBarLayout="large-filled-symbols">
+
+<div class="container">
+  <legend class="pull-left">Novo Empenho</legend>
+  <!-- Início Empenho Form -->
+  <div class="form-group">
+    <label for="unidadeEmp">Unidade Gestora:</label>
+
+    <input class="form-control" 
+      type="text"  
+      id="unidadeEmp" 
+      placeholder="Unidade Gestora" 
+      formControlName="unidade_gestora">
+  </div>
+      
+  <div class="form-group">
+    <label for="gestaoEmp">Gestão:</label>
+       <input class="form-control" 
+        type="text"  
+        id="gestaoEmp" 
+        placeholder="Gestão" 
+        formControlName="gestao_emp">
+  </div>
+    
+  <br>
+  <div class="form-group">
+      <label for="eventoEmp">Evento:</label>
+         <input class="form-control" 
+          type="text"  
+          id="eventoEmp" 
+          placeholder="Evento" 
+          formControlName="evento">
+  </div>
+  <br>  
+  <div class="form-group">
+      <label for="modalidadeEmp"> Modalidade:
+      </label>
+      <div class="btn-group" id="modalidadeEmp">
+         <label >
+              <input type="radio" id="q128" name="quality[21]" value="ordinario" checked="checked"/> Ordinário
+          </label> 
+          <label >
+              <input type="radio" id="q129" name="quality[21]"  value="global" /> Global
+          </label> 
+          <label >
+              <input type="radio" id="q130" name="quality[21]" value="estimativo" /> Estimativo
+          </label> 
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="tipoEmp"> Tipo:
+      </label>
+      <div class="btn-group" id="tipoEmp">
+         <label >
+              <input type="radio" id="q131" name="quality[22]" value="repasse" checked="checked"/> Repasse
+          </label> 
+          <label >
+              <input type="radio" id="q132" name="quality[22]"  value="suplimento" /> Suplimento
+          </label> 
+          <label >
+              <input type="radio" id="q133" name="quality[22]" value="subvencao social" /> Subvenção Social
+          </label> 
+          <label >
+              <input type="radio" id="q133" name="quality[22]" value="normal" /> Normal
+          </label> 
+        </div>
+    </div>
+      <!-- Fim Empenho form -->
+
+  <wizard-step title="Title of step 1" navigationSymbol="1">
+  
+    
+     
+          
+    
+    
+    
+      
+
+      <!-- Início Empenho>Credor form -->
+    <div formGroupName="credor">
+     
+        <div class="form-group">
+          <label for="tipoEmp"> Tipo Identificação:
+          </label>
+         
+            <div class="btn-group" id="tipoEmp">
+              
+             <label >
+                  <input type="radio" id="q134" name="quality[23]" value="cnpj" checked="checked"/> CNPJ
+              </label> 
+              <label >
+                  <input type="radio" id="q135" name="quality[23]"  value="cpf" /> CPF
+              </label> 
+              <label >
+                  <input type="radio" id="q136" name="quality[23]" value="ug" /> UG
+              </label> 
+              <label >
+                  <input type="radio" id="q137" name="quality[23]" value="iscricao generica" /> Inscrição Genérica
+              </label> 
+              
+            </div>
+          </div>
+          <div class="form-group">
+            
+            <input class="form-control" 
+              type="text"  
+              id="numIdCred" 
+              placeholder="Nº de Identificação" 
+              formControlName="num_id">
+          </div>
+
+          <div class="form-group">
+            <button class="btn btn-default">Buscar Credor</button>
+          </div>
+
+          <div class="form-group">
+            <label for="tipoEmp"> Favorecido:
+            </label>
+            <input class="form-control" 
+              type="text"  
+              id="favorecidoCred" 
+              placeholder="Favorecido" 
+              formControlName="favorecido">          
+          </div>
+
+          
+       
+          <br>
+          <div class="form-group">
+            <label for="tipoEmp"> Gestão:
+            </label>
+            <input class="form-control" 
+              type="text"  
+              id="gestaoCred" 
+              placeholder="Gestão" 
+              formControlName="gestao_cred">
+          </div>
+        </div> 
+
+      <!-- Fim Empenho>Credor Form -->
+
+      <!-- Início Empenho>Orçamentário Form -->
+
+      <div formGroupName="orcamentario">
+     
+        <div class="form-group">
+          <label for="ptResumidoOrc"> PT Resumido:
+          </label>
+            <input class="form-control" 
+              type="text"  
+              id="ptResumidoOrc" 
+              placeholder="166848" 
+              formControlName="pt_resumido">
+        </div>
+          
+
+        <div class="form-group">
+          <button class="btn btn-default">Buscar Orçamenário</button>
+        </div>
+
+        <div class="row">
+          
+          <div class="col-xs-1">
+            <label for="esferaOrc"> Esfera
+            </label>
+            <input type="text"  
+              id="esferaOrc" 
+              placeholder="1" 
+              formControlName="esfera">
+          </div>
+          <div class="col-xs-5">
+            <label for="programaTrabalhoOrc"> Programa de Trabalho
+            </label>
+            <input type="text"  
+              id="programaTrabalhoOrc" 
+              placeholder="1236214684800000" 
+              formControlName="programa_trabalho">
+          </div>
+          <div class="col-xs-2">
+            <label for="uoOrc"> UO
+            </label>
+            <input type="text"  
+              id="uoOrc" 
+              placeholder="16101" 
+              formControlName="uo">
+          </div>
+
+          <div class="col-xs-4">
+            <label for="ugResponsavelOrc"> UG Responsável
+            </label>
+            <input type="text"  
+              id="ugResponsavelOrc" 
+              placeholder="160101" 
+              formControlName="ug_responsavel">
+          </div>
+        </div> 
+        <div class="form-group">
+          <label for="planoInternoOrc"> Plano interno:
+          </label>
+            <input class="form-control" 
+              type="text"  
+              id="planoInternoOrc" 
+              placeholder="4210008312C" 
+              formControlName="plano_interno">
+        </div> 
+
+        <div class="form-group">
+          <button class="btn btn-default">>></button>
+        </div>
+
+        <div class="form-group">
+          
+            <input class="form-control" 
+              type="text"  
+              placeholder="CONCESSAO DE AUXILIO TRANSPORTE">
+        </div>
+
+        <div class="form-group">
+          <label for="naturezaDespesaOrc"> Natureza da Despesa:
+          </label>
+            <input class="form-control" 
+              type="text"  
+              id="naturezaDespesaOrc" 
+              placeholder="333913900" 
+              formControlName="natureza_despesa">
+        </div> 
+
+        <div class="form-group">
+          <button class="btn btn-default">>></button>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" 
+              type="text"  
+              placeholder="OUTROS SERV. TERC. PJ-OP.INTRA ORCAMENTARIA" >
+        </div>
+
+        <div class="form-group">
+          <label for="fonteRecursoOrc"> Fonte de Recurso:
+          </label>
+            <input class="form-control" 
+              type="text"  
+              id="fonteRecursoOrc" 
+              placeholder="0101000000" 
+              formControlName="fonte_recurso">
+        </div> 
+
+        <div class="form-group">
+          <button class="btn btn-default">>></button>
+        </div>
+
+        <div class="form-group">
+            <input class="form-control" 
+              type="text"  
+              placeholder="RECURSOS PROPRIOS" >
+        </div>
+
+        <div class="form-group">
+          <label for="valorOrc"> Valor:
+          </label>
+            <input class="form-control" 
+              type="text"  
+              id="valorOrc" 
+              placeholder="1.937.286,45" 
+              formControlName="valor">
+        </div> 
+        <div class="form-group">
+          <button class="btn btn-default">Verificar Disponibilidade</button>
+        </div>
+      </div> 
+
+      <!-- Fim Empenho>Orçamentário Form -->
+
+  
+    <br>
+    <div class="form-group">
+      <div class="col-md-12l"> 
+        <button (click)="initStep2()" [disabled]="!empenhoForm.valid" type="button" class="btn btn-primary" nextStep>Próximo</button>
+        <!-- <button type="button" class="btn btn-warning" goToStep="2">Go directly to third Step</button> -->
+      </div>
+
+    </div>
+    
+    <div class="row">
+      <div class="col-md-12">
+        {{empenhoForm.value | json}}
+       
+      </div>
+    </div>
+
+
+  </wizard-step>
+  <wizard-step title="Title of step 2" optionalStep >
+    <div class="row" formGroupName="complementar" >
+    <legend>Dados complementares (CONTRATUAIS, LEGAIS, ETC.)</legend>
+      <div class="form-group">
+        <label for="acordoComp"> Acordo:
+        </label>
+          <input class="form-control" 
+            type="text"  
+            id="acordoComp" 
+            placeholder="acordo" 
+            formControlName="acordo">
+      </div>
+      
+      <br>
+        <div class="form-group">
+          <label for="licitacaoComp"> Licitação:
+          </label>
+            <select class="form-control" id="licitacaoComp" formControlName="licitacao">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+      
+        </div>
+      <div class="form-group">
+        <label for="origemComp"> Origem Material:
+        </label>
+          <input class="form-control" 
+            type="text"  
+            id="origemComp" 
+            placeholder="Origem do Material" 
+            formControlName="origem_material">
+      </div>
+
+      <br>
+      <div class="form-group">
+        <label for="refLegalComp"> Referência Legal:
+        </label>
+          <input class="form-control" 
+            type="text"  
+            id="refLegalComp" 
+            placeholder="Referência Legal" 
+            formControlName="referencia_legal">
+      
+      </div>
+      <div class="form-group">
+        <label for="numProcComp"> Número do Processo:
+        </label>
+          <input class="form-control" 
+            type="text"  
+            id="numProcComp" 
+            placeholder="Número do Processo" 
+            formControlName="numero_processo">
+      </div>
+
+      <br>
+      <div class="form-group">
+        <label for="numConvenioComp"> Número Convênio:
+        </label>
+          <input class="form-control" 
+            type="text"  
+            id="numConvenioComp" 
+            placeholder="Número Convênio" 
+            formControlName="numero_convenio">
+      
+      </div>
+      <div class="form-group">
+        <label for="aditConvenioComp"> Aditivo Convênio:
+        </label>
+          <input class="form-control" 
+            type="text"  
+            id="aditConvenioComp" 
+            placeholder="Aditivo Convênio" 
+            formControlName="aditivo_convenio">
+      </div>
+
+      <br>
+      <div class="form-group">
+        <label for="numContratoComp"> Número Contrato:
+        </label>
+          <input class="form-control" 
+            type="text"  
+            id="numContratoComp" 
+            placeholder="Número Contrato" 
+            formControlName="numero_contrato">
+      
+      </div>
+      <div class="form-group">
+        <label for="aditContratoComp"> Aditivo Contrato:
+        </label>
+          <input class="form-control" 
+            type="text"  
+            id="aditContratoComp" 
+            placeholder="Aditivo Contrato" 
+            formControlName="aditivo_contrato">
+      </div>
+    </div>
+
+    <div class="row" formGroupName="dados_entrega">
+      
+       <legend>Dados complementares (CONTRATUAIS, LEGAIS, ETC.)</legend>
+       <div class="form-group">
+        <label for="localComp"> Local:
+        </label>
+          <input class="form-control" 
+            type="text"  
+            id="localComp" 
+            placeholder="Local" 
+            formControlName="local">
+      </div>
+
+      <br>
+      <div class="form-group">
+        <label for="dataComp"> Data:
+        </label>
+          <input class="form-control" 
+            type="text"  
+            id="dataComp" 
+            placeholder="Data" 
+            formControlName="data">
+      </div>
+    </div>
+    
+
+  <br>
+  <div class="form-group">
+    <div class="col-md-12l"> 
+
+      <button type="button" class="btn btn-warning" previousStep>Go to previous step</button>
+      <button type="button" class="btn btn-primary" nextStep>Go to next step</button>
+   </div> 
+  </div>  
+  </wizard-step>
+  <wizard-step title="Title of step 3">
+    <div class="row" formGroupName="item">
+      <div class="form-group">
+        <label for="valorNeItem"> Valor da NE:
+        </label>
+          <input class="form-control" 
+            type="text"  
+            id="valorNeItem" 
+            placeholder="1.937.286,45" 
+            formControlName="valor_ne">
+      </div>
+      <div class="form-group">
+        <label for="numSubItem"> Nº DE SUBITENS:
+        </label>
+          <input class="form-control" 
+            type="text"  
+            id="numSubItem" 
+            placeholder="9" 
+            formControlName="num_subitens">
+      </div>
+       <div class="form-group">
+        <label for="totalSubItem"> TOTAL SUBITENS:
+        </label>
+          <input class="form-control" 
+            type="text"  
+            id="totalSubItem" 
+            placeholder="77.009,93" 
+            formControlName="total_subitens">
+      </div>
+        <div class="form-group">
+          <label for="restanteItem"> RESTANTE:
+          </label>
+            <input class="form-control" 
+              type="text"  
+              id="restanteItem" 
+              placeholder="1.860.276,52" 
+              formControlName="restante">
+        </div>
+        <div class="form-group">
+          <label for="codigoItem"> Código:
+          </label>
+            <select class="form-control" id="codigoItem" formControlName="codigo">
+              <option>68- RESTITUIÇÕES DIVERSAS</option>
+              <option>68- RESTITUIÇÕES DIVERSAS</option>
+              <option>68- RESTITUIÇÕES DIVERSAS</option>
+              <option>68- RESTITUIÇÕES DIVERSAS</option>
+              <option>68- RESTITUIÇÕES DIVERSAS</option>
+            </select>
+      
+        </div>
+        <div class="form-group">
+          <label for="valorItem"> Valor:
+          </label>
+            <input class="form-control" 
+              type="text"  
+              id="valorItem" 
+              placeholder="154.283,69" 
+              formControlName="valor">
+        </div>
+      <div class="form-group">
+        <button class="btn btn-default btn-xs" data-title="Validar"  >Validar</button>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-success btn-xs" data-title="Add" (click)="addSubItem()"><span class="glyphicon glyphicon-plus"></span></button>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <table id="mytable" class="table table-bordered table-striped">
+                       
+        <thead>
+          <th>Sales ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Designation</th>
+          <th>Mobile Numberl</th>
+          <th>Delete</th>
+        </thead>
+        <tbody formArrayName="subitens" *ngFor="let subitem of empenhoForm.controls['subitens'].controls; let i = index " >
+          
+          <tr formGroupName="{{i}}">
+              <td>Mohsin</td>
+              <td>Irshad</td>
+              <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
+              <td>isometric.mohsin@gmail.com</td>
+              <td>+923335586757</td>
+              
+              <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" (click)="removeSubItem()" ><span class="glyphicon glyphicon-trash"></span></button></td>
+
+          <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                  <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
+                </div>
+                <div class="modal-body">
+                   
+                  <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Tem certeza que deseja remover este item?</div>
+                   
+                </div>
+                  <div class="modal-footer ">
+                    <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+                  </div>
+              </div>
+                <!-- /.modal-content --> 
+            </div>
+            <!-- /.modal-dialog --> 
+          </div>
+          </tr>
+
+        </tbody>
+            
+      </table>
+      
+    </div>
+
+    
+
+    <div class="form-group">
+      <div class="col-md-12l"> 
+        <button type="button" class="btn btn-warning" previousStep>Go to previous step</button>
+        <button type="button" class="btn btn-primary" nextStep>Go to next step</button>
+      </div>
+    </div>
+  </wizard-step>
+  <wizard-step title="Title of step 4">
+    Content of Step 4
+    <button type="button" class="btn btn-warning" previousStep>Previous Step</button>
+    <button type="button" class="btn btn-success" (click)="finishFunction()">Finish</button>
+  </wizard-step>
+  </div>
+</wizard>
+</form>
+
+
