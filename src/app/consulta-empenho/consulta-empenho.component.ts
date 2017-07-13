@@ -14,7 +14,10 @@ export class ConsultaEmpenhoComponent implements OnInit {
    service: EmpenhoService;
    active: Boolean = true;
    empenhoForm: FormGroup;
+   meses: Array<string[]> = new Array;
+   check_buttons: boolean[] = Array();
    fb: FormBuilder;
+   passo4: boolean = false;
    editingStatus: boolean = false;
    empenho= new Empenho();
    empenhos: Empenho[] = [];
@@ -44,6 +47,7 @@ export class ConsultaEmpenhoComponent implements OnInit {
   }
 
   initForm(empenho?: Empenho):void {
+
     // Empenho form fields
      let modalidade: string;
      let tipo: string;
@@ -88,10 +92,12 @@ export class ConsultaEmpenhoComponent implements OnInit {
      let valor_ne: string;
      let num_subitens: string;
      let total_subitens: string;
-     let restante: string;
+     let restante: number;
      let codigo: string;
      let valor_subitens: string;
      let subitens: FormArray = new FormArray([]);
+     let parcelas: FormArray = new FormArray([]);
+     let total_parcelas: number;
      // 
 
      
@@ -126,6 +132,7 @@ export class ConsultaEmpenhoComponent implements OnInit {
       tipo: [''],
       unidade_gestora: [''],
       gestao_emp: [''],
+      total_parcelas: [0],
 
       credor: this.fb.group({
         tipo_id: [''],
@@ -162,22 +169,37 @@ export class ConsultaEmpenhoComponent implements OnInit {
         data: ['']
       }),
       item: this.fb.group({
-        valor_ne: [''],
+        valor_ne: ['1.937.286,45'],
         num_subitens: [''],
         total_subitens: [''],
         valor: [''],
         codigo: [''],
-        restante: [''],
+        restante: [0],
         
       }),
       subitens: subitens,
+      parcelas: parcelas,
       
     });
 
+    this.meses.push(
+        ["Julho"],
+        ["Agosto"],
+        ["Setembro"],
+        ["Outubro"],
+        ["Novembro"],
+        ["Dezembro"]);
+    this.check_buttons=
+        [false],
+        [false],
+        [false],
+        [false],
+        [false],
+        [false];
   }
 
   addSubItem():void {
-    let codigo_subitem: string;
+     let codigo_subitem: string;
      let descricao: string;
      let valor_subitem: string;
      
@@ -190,10 +212,59 @@ export class ConsultaEmpenhoComponent implements OnInit {
       })
     )
   }
+  addParcelas(){
+    let mes: string;
+    let valor: number;
+ 
+    if (!this.passo4){
+      for (var i = this.meses.length - 1; i >= 0; i--) {
+        (<FormArray>this.empenhoForm.controls['parcelas']).push(
+          new FormGroup({
+            mes: new FormControl(''),
+            valor: new FormControl({value: 0, disabled: true}),
+          })
+        )
+      }
+      this.passo4 = true;
+    }
+    console.log(<FormArray>this.empenhoForm.controls['parcelas']);
+  }
+
+  editaValor(pos: number, group: FormGroup){
+    if (!this.check_buttons[pos]) {
+      group.controls['valor'].enable();
+      this.check_buttons[pos] = true;
+      console.log(this.check_buttons[pos], group.controls['valor']);
+    }else{
+      group.controls['valor'].disable();
+      this.diminuiTotalParcelas(group);
+      group.controls['valor'].setValue(0);
+      this.check_buttons[pos] = false;
+    }
+    
+  }
+
+  diminuiTotalParcelas(group: FormGroup){
+    var valor = group.controls['valor'].value;
+    var valor_atual = this.empenhoForm.controls['total_parcelas'].value;
+    var valor_total = -(valor ) + (valor_atual);
+    this.empenhoForm.controls['total_parcelas'].setValue(valor_total); 
+  }
+
+  acrescentaTotalParcelas(group: FormGroup){
+    var valor = group.controls['valor'].value;
+    var valor_atual = this.empenhoForm.controls['total_parcelas'].value;
+    var valor_total = +(valor as number) + (valor_atual as number);
+    this.empenhoForm.controls['total_parcelas'].setValue(valor_total); 
+  }
+
+
 
   removeSubItem(pos: number):void{
        (<FormArray>this.empenhoForm.controls['subitens']).removeAt(pos)
-   }
+  }
+
+
 
   initStep2(){
     console.log('passo 2 iniciado');
@@ -201,9 +272,14 @@ export class ConsultaEmpenhoComponent implements OnInit {
     this.empenhoForm
   }
 
+ 
    limparEmpenho(){
    		this.empenho = new Empenho();
    }
+
+   get formSubitens() { return <FormArray>this.empenhoForm.get('subitens'); }
+
+   get formParcelas() { return <FormArray>this.empenhoForm.get('parcelas'); }
 
    preencheEmpenho(){
 

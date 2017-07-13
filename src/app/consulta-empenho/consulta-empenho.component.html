@@ -70,7 +70,7 @@
     </div>
       <!-- Fim Empenho form -->
 
-  <wizard-step title="Title of step 1" navigationSymbol="1">
+  <wizard-step title="Passo 1" navigationSymbol="1">
   
     
      
@@ -285,16 +285,11 @@
 
     </div>
     
-    <div class="row">
-      <div class="col-md-12">
-        {{empenhoForm.value | json}}
-       
-      </div>
-    </div>
+    
 
 
   </wizard-step>
-  <wizard-step title="Title of step 2" optionalStep >
+  <wizard-step title="Passo 2" optionalStep >
     <div class="row" formGroupName="complementar" >
     <legend>Dados complementares (CONTRATUAIS, LEGAIS, ETC.)</legend>
       <div class="form-group">
@@ -424,12 +419,12 @@
   <div class="form-group">
     <div class="col-md-12l"> 
 
-      <button type="button" class="btn btn-warning" previousStep>Go to previous step</button>
-      <button type="button" class="btn btn-primary" nextStep>Go to next step</button>
+      <button type="button" class="btn btn-warning" previousStep>Anterior</button>
+      <button type="button" class="btn btn-primary" nextStep>Próximo</button>
    </div> 
   </div>  
   </wizard-step>
-  <wizard-step title="Title of step 3">
+  <wizard-step title="Passo 3">
     <div class="row" formGroupName="item">
       <div class="form-group">
         <label for="valorNeItem"> Valor da NE:
@@ -507,7 +502,7 @@
           <th>Mobile Numberl</th>
           <th>Delete</th>
         </thead>
-        <tbody formArrayName="subitens" *ngFor="let subitem of empenhoForm.controls['subitens'].controls; let i = index " >
+        <tbody formArrayName="subitens" *ngFor="let subitem of formSubitens.controls; let i = index " >
           
           <tr formGroupName="{{i}}">
               <td>Mohsin</td>
@@ -551,15 +546,91 @@
 
     <div class="form-group">
       <div class="col-md-12l"> 
-        <button type="button" class="btn btn-warning" previousStep>Go to previous step</button>
-        <button type="button" class="btn btn-primary" nextStep>Go to next step</button>
+        <button type="button" class="btn btn-warning" previousStep>Anterior</button>
+        <button type="button" class="btn btn-primary" (click)="addParcelas()" nextStep>Próximo</button>
       </div>
     </div>
   </wizard-step>
-  <wizard-step title="Title of step 4">
-    Content of Step 4
-    <button type="button" class="btn btn-warning" previousStep>Previous Step</button>
-    <button type="button" class="btn btn-success" (click)="finishFunction()">Finish</button>
+  <wizard-step title="Passo 4">
+
+  <div class="row">
+    <div class="form-group">
+      <label for="valorNeEmp"> VALOR DA NE:
+      </label>
+        <input class="form-control" 
+          type="text"
+          disabled="true" 
+          id="valorNeEmp" 
+          value="{{empenhoForm.controls['item'].controls['valor_ne'].value}}">
+    </div>
+
+    <div class="form-group">
+      <label for="numParcEmp">Nº PARCELAS:
+      </label>
+        <input class="form-control" 
+          type="text"
+          disabled="true" 
+          id="numParcEmp" 
+          value="{{this.empenhoForm.controls['parcelas'].length}}">
+    </div>
+    <div class="form-group">
+          <label for="totalParcEmp"> TOTAL PARCELAS:
+          </label>
+            <input class="form-control" 
+              type="text" 
+              disabled="true" 
+              id="totalParcEmp" 
+              value="{{empenhoForm.controls['total_parcelas'].value}}">
+    </div>
+
+    <div class="form-group">
+          <label for="restanteEmp"> RESTANTE:
+          </label>
+            <input class="form-control" 
+              type="text"  
+              disabled="true" 
+              id="restanteEmp" 
+              value="{{empenhoForm.controls['item'].controls['restante'].value}}">
+    </div>
+
+  </div>
+
+  <br>
+  
+    <div class="row">
+      <table id="mytable" class="table table-bordered table-striped">
+                       
+        <thead>
+          <th>-X-</th>
+          <th>Mês</th>
+          <th>Valor</th>
+          
+        </thead>
+        <tbody formArrayName="parcelas" *ngFor="let parcela of empenhoForm.controls['parcelas'].controls; let i = index " >
+          
+          <tr formGroupName="{{i}}">
+            <td><input type="checkbox"(change)="editaValor(i, parcela)" class="checkthis" /></td>
+            <td>{{meses[i]}}</td>
+            <input class="form-control" 
+              type="text"
+              id="valorParc"
+              (change)="acrescentaTotalParcelas(parcela)"
+              formControlName="valor"
+             >
+          </tr>
+
+        </tbody>
+            
+      </table>
+
+      
+    </div>
+   <div class="form-group">
+    <div class="col-md-12l"> 
+      <button type="button" class="btn btn-warning" previousStep>Anterior</button>
+      <button type="button" class="btn btn-success">Gerar Empenho</button>
+    </div>
+  </div>
   </wizard-step>
   </div>
 </wizard>
