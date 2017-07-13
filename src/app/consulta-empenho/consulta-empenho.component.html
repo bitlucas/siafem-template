@@ -571,7 +571,7 @@
           type="text"
           disabled="true" 
           id="numParcEmp" 
-          value="{{this.empenhoForm.controls['parcelas'].length}}">
+          value="{{total_parcelas}}">
     </div>
     <div class="form-group">
           <label for="totalParcEmp"> TOTAL PARCELAS:
@@ -622,8 +622,181 @@
         </tbody>
             
       </table>
+ 
+    </div>
+   <div class="form-group">
+    <div class="col-md-12l"> 
+      <button type="button" class="btn btn-warning" previousStep>Anterior</button>
+      <button type="button" class="btn btn-primary" nextStep>Próximo</button>
+    </div>
+  </div>
+  </wizard-step>
+  <wizard-step title="Passo 5">
 
-      
+  <div class="row">
+    <div class="form-group">
+      <label for="valorNeEmp"> VALOR DA NE:
+      </label>
+        <input class="form-control" 
+          type="text"
+          disabled="true" 
+          id="valorNeEmp" 
+          value="{{empenhoForm.controls['item'].controls['valor_ne'].value}}">
+    </div>
+
+    <div class="form-group">
+      <label for="numParcEmp">Nº PARCELAS:
+      </label>
+        <input class="form-control" 
+          type="text"
+          disabled="true" 
+          id="numParcEmp" 
+          value="{{total_parcelas}}">
+    </div>
+    <div class="form-group">
+          <label for="totalParcEmp"> TOTAL PARCELAS:
+          </label>
+            <input class="form-control" 
+              type="text" 
+              disabled="true" 
+              id="totalParcEmp" 
+              value="{{empenhoForm.controls['total_parcelas'].value}}">
+    </div>
+
+    <div class="form-group">
+          <label for="restanteEmp"> RESTANTE:
+          </label>
+            <input class="form-control" 
+              type="text"  
+              disabled="true" 
+              id="restanteEmp" 
+              value="{{empenhoForm.controls['item'].controls['restante'].value}}">
+    </div>
+
+  </div>
+
+  <br>
+
+  <div class="row" formGroupName="discriminacao">
+    <div class="form-group">
+      <label for="valorNeEmp"> Item:
+      </label>
+        <input class="form-control" 
+          type="text"
+          disabled="true" 
+          id="numItem" 
+          value="{{empenhoForm.controls['discriminacao'].controls['item'].value}}">
+    </div>
+
+    <div class="form-group">
+      <label for="unidMedidaItem">Unid. Medida:
+      </label>
+        <input class="form-control" 
+          type="text"
+          
+          id="unidMedidaItem" 
+          formControlName="unidade_medida">
+    </div>
+    <div class="form-group">
+          <label for="qtdItem"> Quantidade:
+          </label>
+            <input class="form-control" 
+              type="text" 
+              
+              id="qtdItem" 
+              formControlName="quantidade">
+    </div>
+
+    <div class="form-group">
+          <label for="valorUnitItem"> Valor Unitário:
+          </label>
+            <input class="form-control" 
+              type="text"  
+              id="valorUnitItem" 
+              formControlName="valor_unitario">
+    </div>
+
+    <div class="form-group">
+          <label for="valorTotItem"> Valor Total:
+          </label>
+            <input class="form-control" 
+              type="text"  
+              id="valorTotItem" 
+              formControlName="valor_total">
+    </div>
+
+    <br>
+
+  
+          <label for="descItem"> Descrição:
+          </label>
+            <textarea class="form-control" 
+              
+              id="descItem" 
+              formControlName="descricao">
+            </textarea>
+    
+
+    <div class="form-group">
+        <button class="btn btn-success btn-xs" data-title="Add" (click)="addItem(empenhoForm.get('discriminacao'))"><span class="glyphicon glyphicon-plus"></span></button>
+      </div>
+
+  </div>
+
+  <br>
+  
+    <div class="row" formGroupName="discriminacao">
+      <table id="mytable" class="table table-bordered table-striped">
+                       
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Unid. Medida</th>
+            <th>QTD</th>
+            <th>Valor Unitário</th>
+            <th>Valor Total</th>
+            <th>Descrição</th>
+          </tr>  
+        </thead>
+        <tbody formArrayName="itens" *ngFor="let item of formItens.controls; let i = index " >
+          
+          <tr formGroupName="{{i}}">
+              <td>{{i+1}}</td>
+              <td> {{item.controls['unidade_medida'].value}} </td>
+              <td>{{item.controls['quantidade'].value}}</td>
+              <td>{{item.controls['valor_unitario'].value}}</td>
+              <td>{{item.controls['valor_total'].value}}</td>
+              <td>{{item.controls['descricao'].value}}</td>
+
+              <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" (click)="removeItem()" ><span class="glyphicon glyphicon-trash"></span></button></td>
+
+          <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                  <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
+                </div>
+                <div class="modal-body">
+                   
+                  <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Tem certeza que deseja remover este item?</div>
+                   
+                </div>
+                  <div class="modal-footer ">
+                    <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+                  </div>
+              </div>
+                <!-- /.modal-content --> 
+            </div>
+            <!-- /.modal-dialog --> 
+          </div>
+          </tr>
+
+        </tbody>
+            
+      </table>
+ 
     </div>
    <div class="form-group">
     <div class="col-md-12l"> 
