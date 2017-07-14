@@ -279,7 +279,7 @@
     <br>
     <div class="form-group">
       <div class="col-md-12l"> 
-        <button (click)="initStep2()" [disabled]="!empenhoForm.valid" type="button" class="btn btn-primary" nextStep>Próximo</button>
+        <button (click)="initStep2()" [disabled]="!empenhoForm.controls['orcamentario'].valid" type="button" class="btn btn-primary" nextStep>Próximo</button>
         <!-- <button type="button" class="btn btn-warning" goToStep="2">Go directly to third Step</button> -->
       </div>
 
@@ -420,7 +420,7 @@
     <div class="col-md-12l"> 
 
       <button type="button" class="btn btn-warning" previousStep>Anterior</button>
-      <button type="button" class="btn btn-primary" nextStep>Próximo</button>
+      <button type="button" class="btn btn-primary" [disabled]="!empenhoForm.get('complementar').valid" nextStep>Próximo</button>
    </div> 
   </div>  
   </wizard-step>
@@ -547,7 +547,7 @@
     <div class="form-group">
       <div class="col-md-12l"> 
         <button type="button" class="btn btn-warning" previousStep>Anterior</button>
-        <button type="button" class="btn btn-primary" (click)="addParcelas()" nextStep>Próximo</button>
+        <button type="button" class="btn btn-primary" (click)="addParcelas()" [disabled]="!empenhoForm.get('subitens').valid" nextStep>Próximo</button>
       </div>
     </div>
   </wizard-step>

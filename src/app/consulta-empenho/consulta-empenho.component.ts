@@ -162,7 +162,7 @@ export class ConsultaEmpenhoComponent implements OnInit {
         valor: ['']
       }),
       complementar: this.fb.group({
-        acordo: [''],
+        acordo: ['', Validators.required],
         licitacao: [''],
         referencia_legal: [''],
         numero_convenio: [''],
@@ -227,7 +227,7 @@ export class ConsultaEmpenhoComponent implements OnInit {
         descricao: new FormControl(''),
         valor: new FormControl(''),
       })
-    )
+    ),Validators.minLength(1)
   }
 
   addItem(group: FormGroup) {
