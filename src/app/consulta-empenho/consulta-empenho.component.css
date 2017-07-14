@@ -6,3 +6,21 @@
 .ng-invalid:not(form)  {
   border-left: 5px solid #a94442; /* red */
 }
+
+.afastaPraBaixo{
+	margin-top: 10px;
+}
+
+.afastaProLado{
+	margin-right: 10px;
+	text-align: left;
+}
+
+.afastaPraCima{
+	margin-bottom: 20px;
+
+}
+
+.alignRight{
+	float: right;
+}

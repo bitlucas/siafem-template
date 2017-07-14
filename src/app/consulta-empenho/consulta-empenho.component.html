@@ -1,21 +1,26 @@
-<form class="form-inline" [formGroup]="empenhoForm" (ngSubmit)="onSubmit()">
+<form class="form-horizontal" [formGroup]="empenhoForm" (ngSubmit)="onSubmit()">
 
 <wizard navBarLayout="large-filled-symbols">
 
 <div class="container">
-  <legend class="pull-left">Novo Empenho</legend>
-  <!-- Início Empenho Form -->
-  <div class="form-group">
-    <label for="unidadeEmp">Unidade Gestora:</label>
+<!-- Início Empenho Form -->
 
+  <div class="container">
+  <div class="panel panel-primary">
+  <div class="panel-heading"> Novo Empenho </div>
+  
+  <div class="panel-body">
+  
+  <div class="form-group col-sm-10">
+    <label for="unidadeEmp">Unidade Gestora:</label>
     <input class="form-control" 
       type="text"  
       id="unidadeEmp" 
       placeholder="Unidade Gestora" 
       formControlName="unidade_gestora">
   </div>
-      
-  <div class="form-group">
+   
+  <div class="form-group col-sm-10">
     <label for="gestaoEmp">Gestão:</label>
        <input class="form-control" 
         type="text"  
@@ -23,9 +28,9 @@
         placeholder="Gestão" 
         formControlName="gestao_emp">
   </div>
-    
-  <br>
-  <div class="form-group">
+
+
+<div class="form-group col-sm-10">
       <label for="eventoEmp">Evento:</label>
          <input class="form-control" 
           type="text"  
@@ -33,91 +38,138 @@
           placeholder="Evento" 
           formControlName="evento">
   </div>
-  <br>  
-  <div class="form-group">
+
+
+  <div class="form-group col-md-4 afastaPraBaixo">
+      <ul class="btn-group" id="modalidadeEmp">
+      <li>
       <label for="modalidadeEmp"> Modalidade:
       </label>
-      <div class="btn-group" id="modalidadeEmp">
+      </li>   
+      <li>
          <label >
               <input type="radio" id="q128" name="quality[21]" value="ordinario" checked="checked"/> Ordinário
-          </label> 
+          </label>
+      </li>
+      <li> 
           <label >
               <input type="radio" id="q129" name="quality[21]"  value="global" /> Global
-          </label> 
+          </label>
+      </li>
+      <li>
           <label >
               <input type="radio" id="q130" name="quality[21]" value="estimativo" /> Estimativo
-          </label> 
-        </div>
-    </div>
-    <br>
-    <div class="form-group">
-      <label for="tipoEmp"> Tipo:
-      </label>
+          </label>
+      </li>  
+        </ul>
+
+<!-- MENU MODALIDADE -->
+<!-- <div class="form-group col-sm-10">
+      <label for="eventoEmp">Modalidade:</label>
+         <select class="form-control" 
+          type="text"  
+          id="modalidadeEmp" 
+          placeholder="Modalidade" 
+          formControlName="modalidade">
+        <option>Ordinario</option>
+        <option>Global</option>
+        <option>Estimativo</option>
+        </select>
+    </div>  -->
+
+  </div>
+      <ul class="form-group col-md-4 afastaPraBaixo">
       <div class="btn-group" id="tipoEmp">
-         <label >
+          <li>
+            <label for="tipoEmp"> Tipo:
+            </label>
+          </li>
+          <li>
+            <label>
               <input type="radio" id="q131" name="quality[22]" value="repasse" checked="checked"/> Repasse
-          </label> 
-          <label >
+            </label>
+          </li> 
+          <li>
+            <label>
               <input type="radio" id="q132" name="quality[22]"  value="suplimento" /> Suplimento
-          </label> 
-          <label >
+            </label>
+          </li>
+          <li> 
+            <label>
               <input type="radio" id="q133" name="quality[22]" value="subvencao social" /> Subvenção Social
-          </label> 
-          <label >
+            </label>
+          </li>
+          <li>
+            <label>
               <input type="radio" id="q133" name="quality[22]" value="normal" /> Normal
-          </label> 
-        </div>
-    </div>
-      <!-- Fim Empenho form -->
+            </label> 
+          </li> 
+      </div>
+    </ul>
+</div>
+
+
+</div>
+</div> <!-- fim do container -->  
+<!-- Fim Empenho form -->
 
   <wizard-step title="Title of step 1" navigationSymbol="1">
-  
-    
-     
-          
-    
-    
-    
-      
 
-      <!-- Início Empenho>Credor form -->
-    <div formGroupName="credor">
-     
-        <div class="form-group">
-          <label for="tipoEmp"> Tipo Identificação:
-          </label>
-         
-            <div class="btn-group" id="tipoEmp">
-              
-             <label >
-                  <input type="radio" id="q134" name="quality[23]" value="cnpj" checked="checked"/> CNPJ
-              </label> 
-              <label >
-                  <input type="radio" id="q135" name="quality[23]"  value="cpf" /> CPF
-              </label> 
-              <label >
-                  <input type="radio" id="q136" name="quality[23]" value="ug" /> UG
-              </label> 
-              <label >
-                  <input type="radio" id="q137" name="quality[23]" value="iscricao generica" /> Inscrição Genérica
-              </label> 
-              
-            </div>
-          </div>
-          <div class="form-group">
-            
-            <input class="form-control" 
+<!-- Início Empenho>Credor form -->
+  <div class="container">
+  <div class="panel panel-primary">
+  <div class="panel-heading">Credor</div>
+  <div class="panel-body"> 
+    
+    <div formGroupName="credor"> 
+
+        <div class="form-group col-sm-2">
+
+          <ul >
+           <div class="btn-group" id="tipoEmp">
+            <li>
+            <label for="tipoEmp"> Tipo Identificação:
+            </label>
+            </li>
+            <li>
+                <label>
+                    <input type="radio" id="q134" name="quality[23]" value="cnpj" checked="checked" /> CNPJ
+                </label> 
+            </li>
+            <li>    
+                <label>
+                    <input type="radio" id="q135" name="quality[23]"  value="cpf" /> CPF
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="radio" id="q136" name="quality[23]" value="ug" /> UG
+                </label> 
+            </li>
+            <li>    
+                <label>
+                    <input type="radio" id="q137" name="quality[23]" value="iscricao generica" /> Inscrição Genérica
+                </label>
+            </li>
+              </div>
+        </ul>
+
+      </div>
+
+        <div class="col-sm-10 col-md-6">
+           <input class="form-control" 
               type="text"  
               id="numIdCred" 
               placeholder="Nº de Identificação" 
               formControlName="num_id">
-          </div>
 
-          <div class="form-group">
-            <button class="btn btn-default">Buscar Credor</button>
-          </div>
+            <button class="afastaPraBaixo btn btn-default">Buscar Credor</button>
+        </div>
 
-          <div class="form-group">
+        <br/>
+
+        <div class="col-sm-12">
+           <div class="form-group col-sm-10">
             <label for="tipoEmp"> Favorecido:
             </label>
             <input class="form-control" 
@@ -127,10 +179,7 @@
               formControlName="favorecido">          
           </div>
 
-          
-       
-          <br>
-          <div class="form-group">
+          <div class="form-group col-sm-10">
             <label for="tipoEmp"> Gestão:
             </label>
             <input class="form-control" 
@@ -139,8 +188,12 @@
               placeholder="Gestão" 
               formControlName="gestao_cred">
           </div>
-        </div> 
-
+        </div>
+    </div> <!-- credor -->
+  </div> <!-- panel-body -->
+  </div> <!-- panel panel-primary -->
+  </div> <!-- FIM DO CONTAINER CREDOR -->
+      
       <!-- Fim Empenho>Credor Form -->
 
       <!-- Início Empenho>Orçamentário Form -->
@@ -561,7 +614,7 @@
     <button type="button" class="btn btn-warning" previousStep>Previous Step</button>
     <button type="button" class="btn btn-success" (click)="finishFunction()">Finish</button>
   </wizard-step>
-  </div>
+</div>
 </wizard>
 </form>
 
