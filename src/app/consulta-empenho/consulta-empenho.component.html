@@ -114,7 +114,7 @@
 <!-- Fim Empenho form -->
 
 
-  <wizard-step title="Title of step 1" navigationSymbol="1">
+  <wizard-step title="Passo 1" navigationSymbol="1">
 
 <!-- Início Empenho>Credor form -->
   <div class="container">
@@ -203,12 +203,10 @@
       <!-- Início Empenho>Orçamentário Form -->
     <div class="container">
     <div class="panel panel-primary">
-    <div class="panel-heading">Orcamentario</div>
-    <div class="panel-body"> 
-
-      <div formGroupName="orcamentario">
-     
-        <div class="form-group">
+    <div class="panel-heading">Orçamentário</div>
+    <div class="panel-body" formGroupName="orcamentario"> 
+      
+        <div class="form-group col-sm-10">
           <label for="ptResumidoOrc"> PT Resumido:
           </label>
             <input class="form-control" 
@@ -219,11 +217,9 @@
         </div>
           
 
-        <div class="form-group">
+        <div class="form-group col-sm-12">
           <button class="btn btn-default">Buscar Orçamenário</button>
         </div>
-
-        <div class="row">
           
           <div class="col-xs-1">
             <label for="esferaOrc"> Esfera
@@ -258,8 +254,7 @@
               placeholder="160101" 
               formControlName="ug_responsavel">
           </div>
-        </div> 
-        <div class="form-group">
+        <div class="form-group col-sm-10">
           <label for="planoInternoOrc"> Plano interno:
           </label>
             <input class="form-control" 
@@ -269,18 +264,18 @@
               formControlName="plano_interno">
         </div> 
 
-        <div class="form-group">
+        <div class="form-group col-sm-10">
           <button class="btn btn-default">>></button>
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-sm-10">
           
             <input class="form-control" 
               type="text"  
               placeholder="CONCESSAO DE AUXILIO TRANSPORTE">
         </div>
-
-        <div class="form-group">
+        <div class="form-group col-sm-12">
+        <div class="col-sm-4">
           <label for="naturezaDespesaOrc"> Natureza da Despesa:
           </label>
             <input class="form-control" 
@@ -290,17 +285,18 @@
               formControlName="natureza_despesa">
         </div> 
 
-        <div class="form-group">
+        <div class="col-sm-4">
           <button class="btn btn-default">>></button>
         </div>
 
-        <div class="form-group">
+        <div class="col-sm-4">
             <input class="form-control" 
               type="text"  
               placeholder="OUTROS SERV. TERC. PJ-OP.INTRA ORCAMENTARIA" >
         </div>
+        </div>
 
-        <div class="form-group">
+        <div class="form-group col-sm-10">
           <label for="fonteRecursoOrc"> Fonte de Recurso:
           </label>
             <input class="form-control" 
@@ -310,17 +306,17 @@
               formControlName="fonte_recurso">
         </div> 
 
-        <div class="form-group">
+        <div class="form-group col-sm-10">
           <button class="btn btn-default">>></button>
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-sm-10">
             <input class="form-control" 
               type="text"  
               placeholder="RECURSOS PROPRIOS" >
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-sm-10">
           <label for="valorOrc"> Valor:
           </label>
             <input class="form-control" 
@@ -329,13 +325,12 @@
               placeholder="1.937.286,45" 
               formControlName="valor">
         </div> 
-        <div class="form-group">
+        <div class="form-group col-sm-10">
           <button class="btn btn-default">Verificar Disponibilidade</button>
         </div>
-      </div>
-  </div> <!-- panel-body -->
-  </div> <!-- panel panel-primary -->
-  </div> <!-- FIM DO CONTAINER CREDOR -->
+      </div> <!-- panel-body -->
+      </div> <!-- panel panel-primary -->
+      </div> <!-- FIM DO CONTAINER CREDOR -->
        
 
       <!-- Fim Empenho>Orçamentário Form -->
@@ -355,9 +350,13 @@
 
   </wizard-step>
   <wizard-step title="Passo 2" optionalStep >
-    <div class="row" formGroupName="complementar" >
-    <legend>Dados complementares (CONTRATUAIS, LEGAIS, ETC.)</legend>
-      <div class="form-group">
+    
+    <div class="container">
+    <div class="panel panel-primary">
+    <div class="panel-heading">Dados complementares (CONTRATUAIS, LEGAIS, ETC.) </div>
+    
+    <div class="panel-body" formGroupName="complementar">
+      <div class="form-group col-sm-10">
         <label for="acordoComp"> Acordo:
         </label>
           <input class="form-control" 
@@ -368,7 +367,7 @@
       </div>
       
       <br>
-        <div class="form-group">
+        <div class="form-group col-sm-10">
           <label for="licitacaoComp"> Licitação:
           </label>
             <select class="form-control" id="licitacaoComp" formControlName="licitacao">
@@ -380,7 +379,7 @@
             </select>
       
         </div>
-      <div class="form-group">
+      <div class="form-group col-sm-10">
         <label for="origemComp"> Origem Material:
         </label>
           <input class="form-control" 
@@ -391,7 +390,7 @@
       </div>
 
       <br>
-      <div class="form-group">
+      <div class="form-group col-sm-10">
         <label for="refLegalComp"> Referência Legal:
         </label>
           <input class="form-control" 
@@ -401,7 +400,7 @@
             formControlName="referencia_legal">
       
       </div>
-      <div class="form-group">
+      <div class="form-group col-sm-10">
         <label for="numProcComp"> Número do Processo:
         </label>
           <input class="form-control" 
@@ -412,7 +411,7 @@
       </div>
 
       <br>
-      <div class="form-group">
+      <div class="form-group col-sm-10">
         <label for="numConvenioComp"> Número Convênio:
         </label>
           <input class="form-control" 
@@ -422,7 +421,7 @@
             formControlName="numero_convenio">
       
       </div>
-      <div class="form-group">
+      <div class="form-group col-sm-10">
         <label for="aditConvenioComp"> Aditivo Convênio:
         </label>
           <input class="form-control" 
@@ -433,7 +432,7 @@
       </div>
 
       <br>
-      <div class="form-group">
+      <div class="form-group col-sm-10">
         <label for="numContratoComp"> Número Contrato:
         </label>
           <input class="form-control" 
@@ -443,7 +442,7 @@
             formControlName="numero_contrato">
       
       </div>
-      <div class="form-group">
+      <div class="form-group col-sm-10">
         <label for="aditContratoComp"> Aditivo Contrato:
         </label>
           <input class="form-control" 
@@ -453,11 +452,16 @@
             formControlName="aditivo_contrato">
       </div>
     </div>
+    </div>
+    </div>
 
-    <div class="row" formGroupName="dados_entrega">
-      
-       <legend>Dados complementares (CONTRATUAIS, LEGAIS, ETC.)</legend>
-       <div class="form-group">
+
+    <div class="container">
+      <div class="panel panel-primary">
+      <div class="panel-heading">Dados complementares (CONTRATUAIS, LEGAIS, ETC.) </div>
+    
+      <div class="panel-body" formGroupName="dados_entrega">
+       <div class="form-group col-sm-10">
         <label for="localComp"> Local:
         </label>
           <input class="form-control" 
@@ -468,7 +472,7 @@
       </div>
 
       <br>
-      <div class="form-group">
+      <div class="form-group col-sm-10">
         <label for="dataComp"> Data:
         </label>
           <input class="form-control" 
@@ -478,10 +482,12 @@
             formControlName="data">
       </div>
     </div>
+    </div>
+    </div>
     
 
   <br>
-  <div class="form-group">
+  <div class="form-group col-sm-10">
     <div class="col-md-12l"> 
 
       <button type="button" class="btn btn-warning" previousStep>Anterior</button>
@@ -490,8 +496,13 @@
   </div>  
   </wizard-step>
   <wizard-step title="Passo 3">
-    <div class="row" formGroupName="item">
-      <div class="form-group">
+
+    <div class="container">
+    <div class="panel panel-primary">
+    <div class="panel-heading">Valor da NE</div>
+    <div class="panel-body" formGroupName="item"> 
+    
+      <div class="form-group col-sm-10">
         <label for="valorNeItem"> Valor da NE:
         </label>
           <input class="form-control" 
@@ -500,7 +511,7 @@
             placeholder="1.937.286,45" 
             formControlName="valor_ne">
       </div>
-      <div class="form-group">
+      <div class="form-group col-sm-10">
         <label for="numSubItem"> Nº DE SUBITENS:
         </label>
           <input class="form-control" 
@@ -509,7 +520,7 @@
             placeholder="9" 
             formControlName="num_subitens">
       </div>
-       <div class="form-group">
+       <div class="form-group col-sm-10">
         <label for="totalSubItem"> TOTAL SUBITENS:
         </label>
           <input class="form-control" 
@@ -518,7 +529,7 @@
             placeholder="77.009,93" 
             formControlName="total_subitens">
       </div>
-        <div class="form-group">
+        <div class="form-group col-sm-10">
           <label for="restanteItem"> RESTANTE:
           </label>
             <input class="form-control" 
@@ -527,7 +538,7 @@
               placeholder="1.860.276,52" 
               formControlName="restante">
         </div>
-        <div class="form-group">
+        <div class="form-group col-sm-10">
           <label for="codigoItem"> Código:
           </label>
             <select class="form-control" id="codigoItem" formControlName="codigo">
@@ -539,7 +550,7 @@
             </select>
       
         </div>
-        <div class="form-group">
+        <div class="form-group col-sm-10">
           <label for="valorItem"> Valor:
           </label>
             <input class="form-control" 
@@ -548,16 +559,23 @@
               placeholder="154.283,69" 
               formControlName="valor">
         </div>
-      <div class="form-group">
+        </div>
+        </div>
+
+     
+   
+    <div class="panel panel-primary">
+    
+    <div class="panel-body">   
+      <div class="form-group col-sm-10">
         <button class="btn btn-default btn-xs" data-title="Validar"  >Validar</button>
       </div>
-      <div class="form-group">
+      <div class="form-group col-sm-10">
         <button class="btn btn-success btn-xs" data-title="Add" (click)="addSubItem()"><span class="glyphicon glyphicon-plus"></span></button>
       </div>
-    </div>
-    <br>
-    <div class="row">
-      <table id="mytable" class="table table-bordered table-striped">
+    
+    
+      <table id="mytable" class="table table-bordered table-striped col-md-12">
                        
         <thead>
           <th>Sales ID</th>
@@ -605,6 +623,8 @@
             
       </table>
       
+    </div>
+    </div>
     </div>
 
     
