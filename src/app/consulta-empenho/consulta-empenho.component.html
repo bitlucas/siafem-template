@@ -628,8 +628,7 @@
     </div>
 
     
-
-    <div class="form-group">
+    <div class="form-group ">
       <div class="col-md-12l"> 
         <button type="button" class="btn btn-warning" previousStep>Anterior</button>
         <button type="button" class="btn btn-primary" (click)="addParcelas()" [disabled]="!empenhoForm.get('subitens').valid" nextStep>Próximo</button>
@@ -638,8 +637,12 @@
   </wizard-step>
   <wizard-step title="Passo 4">
 
-  <div class="row">
-    <div class="form-group">
+  <div class="container">
+  <div class="panel panel-primary">
+  <div class="panel-heading"></div>
+  <div class="panel-body"> 
+  
+    <div class="form-group col-sm-10">
       <label for="valorNeEmp"> VALOR DA NE:
       </label>
         <input class="form-control" 
@@ -649,7 +652,7 @@
           value="{{empenhoForm.controls['item'].controls['valor_ne'].value}}">
     </div>
 
-    <div class="form-group">
+    <div class="form-group col-sm-10">
       <label for="numParcEmp">Nº PARCELAS:
       </label>
         <input class="form-control" 
@@ -658,7 +661,7 @@
           id="numParcEmp" 
           value="{{total_parcelas}}">
     </div>
-    <div class="form-group">
+    <div class="form-group col-sm-10">
           <label for="totalParcEmp"> TOTAL PARCELAS:
           </label>
             <input class="form-control" 
@@ -668,7 +671,7 @@
               value="{{empenhoForm.controls['total_parcelas'].value}}">
     </div>
 
-    <div class="form-group">
+    <div class="form-group col-sm-10">
           <label for="restanteEmp"> RESTANTE:
           </label>
             <input class="form-control" 
@@ -679,10 +682,12 @@
     </div>
 
   </div>
-
-  <br>
-  
-    <div class="row">
+  </div>
+  </div>
+  <div class="container">
+  <div class="panel panel-primary">
+  <div class="panel-heading"></div>
+  <div class="panel-body"> 
       <table id="mytable" class="table table-bordered table-striped">
                        
         <thead>
@@ -709,6 +714,9 @@
       </table>
  
     </div>
+    </div>
+    </div>
+
    <div class="form-group">
     <div class="col-md-12l"> 
       <button type="button" class="btn btn-warning" previousStep>Anterior</button>
@@ -718,8 +726,11 @@
   </wizard-step>
   <wizard-step title="Passo 5">
 
-  <div class="row">
-    <div class="form-group">
+  <div class="container">
+  <div class="panel panel-primary">
+  <div class="panel-heading"></div>
+  <div class="panel-body"> 
+    <div class="form-group col-sm-10">
       <label for="valorNeEmp"> VALOR DA NE:
       </label>
         <input class="form-control" 
@@ -729,7 +740,7 @@
           value="{{empenhoForm.controls['item'].controls['valor_ne'].value}}">
     </div>
 
-    <div class="form-group">
+    <div class="form-group col-sm-10">
       <label for="numParcEmp">Nº PARCELAS:
       </label>
         <input class="form-control" 
@@ -738,7 +749,7 @@
           id="numParcEmp" 
           value="{{total_parcelas}}">
     </div>
-    <div class="form-group">
+    <div class="form-group col-sm-10">
           <label for="totalParcEmp"> TOTAL PARCELAS:
           </label>
             <input class="form-control" 
@@ -748,7 +759,7 @@
               value="{{empenhoForm.controls['total_parcelas'].value}}">
     </div>
 
-    <div class="form-group">
+    <div class="form-group col-sm-10">
           <label for="restanteEmp"> RESTANTE:
           </label>
             <input class="form-control" 
@@ -759,11 +770,14 @@
     </div>
 
   </div>
+  </div>
+  </div>
 
-  <br>
-
-  <div class="row" formGroupName="discriminacao">
-    <div class="form-group">
+  <div class="container">
+  <div class="panel panel-primary">
+  <div class="panel-heading"></div>
+  <div class="panel-body" formGroupName="discriminacao">
+    <div class="form-group col-sm-10">
       <label for="valorNeEmp"> Item:
       </label>
         <input class="form-control" 
@@ -773,7 +787,7 @@
           value="{{empenhoForm.controls['discriminacao'].controls['item'].value}}">
     </div>
 
-    <div class="form-group">
+    <div class="form-group col-sm-10">
       <label for="unidMedidaItem">Unid. Medida:
       </label>
         <input class="form-control" 
@@ -782,7 +796,7 @@
           id="unidMedidaItem" 
           formControlName="unidade_medida">
     </div>
-    <div class="form-group">
+    <div class="form-group col-sm-10">
           <label for="qtdItem"> Quantidade:
           </label>
             <input class="form-control" 
@@ -792,7 +806,7 @@
               formControlName="quantidade">
     </div>
 
-    <div class="form-group">
+    <div class="form-group col-sm-10">
           <label for="valorUnitItem"> Valor Unitário:
           </label>
             <input class="form-control" 
@@ -801,7 +815,7 @@
               formControlName="valor_unitario">
     </div>
 
-    <div class="form-group">
+    <div class="form-group col-sm-10">
           <label for="valorTotItem"> Valor Total:
           </label>
             <input class="form-control" 
@@ -812,7 +826,7 @@
 
     <br>
 
-  
+    <div class="form-group col-sm-10">
           <label for="descItem"> Descrição:
           </label>
             <textarea class="form-control" 
@@ -820,17 +834,20 @@
               id="descItem" 
               formControlName="descricao">
             </textarea>
-    
+    </div>
 
-    <div class="form-group">
+    <div class="form-group col-sm-10">
         <button class="btn btn-success btn-xs" data-title="Add" (click)="addItem(empenhoForm.get('discriminacao'))"><span class="glyphicon glyphicon-plus"></span></button>
       </div>
 
   </div>
+  </div>
+  </div>
 
-  <br>
-  
-    <div class="row" formGroupName="discriminacao">
+  <div class="container">
+  <div class="panel panel-primary">
+  <div class="panel-heading"></div>
+  <div class="panel-body" formGroupName="discriminacao">
       <table id="mytable" class="table table-bordered table-striped">
                        
         <thead>
@@ -881,7 +898,8 @@
         </tbody>
             
       </table>
- 
+    </div>
+    </div>
     </div>
    <div class="form-group">
     <div class="col-md-12l"> 

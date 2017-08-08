@@ -13,6 +13,7 @@ import { EmpenhoService } from './consulta-empenho/empenho.service';
 import { HeaderComponent } from './header/header.component';
 import { SideBarComponent } from './side-bar/side-bar.component'
 import { WizardModule } from 'ng2-archwizard';
+import { MdlExpansionPanelModule } from '@angular2-mdl-ext/expansion-panel';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { WizardModule } from 'ng2-archwizard';
     routing,
     ReactiveFormsModule,
     BootstrapModalModule,
+    MdlExpansionPanelModule,
     BsDropdownModule.forRoot(),
      WizardModule
   ],
