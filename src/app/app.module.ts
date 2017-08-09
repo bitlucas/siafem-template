@@ -14,6 +14,8 @@ import { HeaderComponent } from './header/header.component';
 import { SideBarComponent } from './side-bar/side-bar.component'
 import { WizardModule } from 'ng2-archwizard';
 import { MdlExpansionPanelModule } from '@angular2-mdl-ext/expansion-panel';
+import { Collapse } from './consulta-empenho/collapse';
+import { AsyncPipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { MdlExpansionPanelModule } from '@angular2-mdl-ext/expansion-panel';
     ConsultaEmpenhoComponent,
     BreadcumbComponent,
     HeaderComponent,
-    SideBarComponent
+    SideBarComponent,
+    Collapse
   ],
   imports: [
     BrowserModule,

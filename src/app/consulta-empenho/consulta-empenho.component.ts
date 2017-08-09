@@ -4,13 +4,15 @@ import { Router } from '@angular/router';
 import { Form, FormGroup, FormBuilder, 
           FormArray, Validators, FormControl  } from '@angular/forms';
 import { EmpenhoService } from './empenho.service';
-import {} from './'
+import { Collapse } from './collapse';
+
 @Component({
   selector: 'consulta-empenho',
   templateUrl: './consulta-empenho.component.html',
-  styleUrls: ['./consulta-empenho.component.css']
+  styleUrls: ['./consulta-empenho.component.css'],
 })
 export class ConsultaEmpenhoComponent implements OnInit { 
+
    service: EmpenhoService;
    active: Boolean = true;
    empenhoForm: FormGroup;
@@ -30,14 +32,17 @@ export class ConsultaEmpenhoComponent implements OnInit {
       
     }
   ngOnInit() {
-      this.initForm()
+      this.initForm();
       
 
       this.service.lista().subscribe(empenhos => {
-      this.empenhos = empenhos
-      console.log(empenhos);
-    }, erro => console.log(erro));
+      this.empenhos = empenhos;
+      this.empenho = empenhos[1];
 
+      console.log(empenhos);
+
+    }, erro => console.log(erro));
+    
   }
 
  
@@ -48,7 +53,7 @@ export class ConsultaEmpenhoComponent implements OnInit {
   }
 
   initForm(empenho?: Empenho):void {
-
+    empenho = this.empenho;
     // Empenho form fields
      let modalidade: string;
      let tipo: string;
@@ -117,7 +122,7 @@ export class ConsultaEmpenhoComponent implements OnInit {
       evento = empenho.end_at;
       unidade = empenho.unidade;
       gestao_emp = empenho.gestao;
-
+      console.log("foi");
     } else {
       // Empenho Fields
       modalidade = '';
@@ -130,6 +135,7 @@ export class ConsultaEmpenhoComponent implements OnInit {
       num_id = '';
       favorecido = '';
       gestao_cred = '';
+      console.log("n foi");
     }
     // let name = 'Dubai Trip';
     
