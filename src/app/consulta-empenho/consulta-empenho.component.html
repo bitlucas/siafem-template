@@ -1,5 +1,7 @@
 <form class="form-horizontal" [formGroup]="empenhoForm" (ngSubmit)="onSubmit()">
 
+
+
 <wizard navBarLayout="large-filled-symbols">
 
 <div class="container">
@@ -7,36 +9,47 @@
 
   
   <collapsible-panel title="Novo Empenho" visible="true">
-  <div class="form-group col-sm-6">
-    <label for="unidadeEmp">Unidade Gestora:</label>
-  
-  
-    <input class="form-control form-control-inline" 
-      type="text"  
-      id="unidadeEmp" 
-      placeholder="Unidade Gestora" 
-      formControlName="unidade_gestora" >
-  </div>
-   
-  <div class="form-group col-sm-6">
-    <label for="unidadeEmp">Gestão:</label>
-  
-       <input class="form-control form-control-inline" 
-        type="text"  
-        id="gestaoEmp" 
-        placeholder="Gestão" 
-        formControlName="gestao_emp">
-  </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="col-sm-6">
+          <div class="form-group">
+            <label for="unidadeEmp">Unidade Gestora:</label>
+          
+          
+            <input class="form-control" 
+              type="text"  
+              id="unidadeEmp" 
+              placeholder="Unidade Gestora" 
+              formControlName="unidade_gestora" >
+          </div>
+        </div>
 
+        <div class="col-sm-5 col-md-offset-1">
+          <div class="form-group">
+            <label for="unidadeEmp">Gestão:</label>
+          
+               <input class="form-control" 
+                type="text"  
+                id="gestaoEmp" 
+                placeholder="Gestão" 
+                formControlName="gestao_emp">
+          </div>
+        </div>
+      </div>
+    </div>
 
-<div class="form-group col-sm-6 ">
-      <label for="eventoEmp">Evento:</label>
-         <input class="form-control form-control-inline" 
-          type="text"  
-          id="eventoEmp" 
-          placeholder="Evento" 
-          formControlName="evento">
-  </div>
+    <div class="row">
+      <div class="col-sm-8 alinha-col">
+        <div class="form-group">
+            <label for="eventoEmp">Evento:</label>
+               <input class="form-control" 
+                type="text"  
+                id="eventoEmp" 
+                placeholder="Evento" 
+                formControlName="evento">
+        </div>
+      </div>
+    </div>  
 
 
   <div class="form-group col-sm-12 afastaPraBaixo borda-gay" id="modalidadeEmp">
@@ -183,24 +196,32 @@
 
       <!-- Início Empenho>Orçamentário Form -->
    
-      <collapsible-panel title="Orçamentário">
-       <div formGroupName="orcamentario"> 
-        <div class="form-group col-sm-10">
-          <label for="ptResumidoOrc"> PT Resumido:
-          </label>
-            <input class="form-control" 
-              type="text"  
-              id="ptResumidoOrc" 
-              placeholder="166848" 
-              formControlName="pt_resumido">
-        </div>
+  <collapsible-panel title="Orçamentário">
+    <div formGroupName="orcamentario">
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="col-sm-6">
+            <div class="form-group">
+              <label for="ptResumidoOrc"> PT Resumido:
+              </label>
+                <input class="form-control form-control-inline" 
+                  type="text"  
+                  id="ptResumidoOrc" 
+                  placeholder="166848" 
+                  formControlName="pt_resumido">
+            </div>
+          </div>
           
-
-        <div class="form-group col-sm-12">
-          <button class="btn btn-default">Buscar Orçamenário</button>
+          <div class="col-sm-2">
+            <div class="form-group">
+              <button class="btn btn-default">Buscar Orçamenário</button>
+            </div>
+          </div>
         </div>
-          
-          <div class="col-xs-1">
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="col-sm-2 col-sm-offset-1">
             <label for="esferaOrc"> Esfera
             </label>
             <input type="text"  
@@ -208,7 +229,7 @@
               placeholder="1" 
               formControlName="esfera">
           </div>
-          <div class="col-xs-5">
+          <div class="col-sm-2">
             <label for="programaTrabalhoOrc"> Programa de Trabalho
             </label>
             <input type="text"  
@@ -216,7 +237,7 @@
               placeholder="1236214684800000" 
               formControlName="programa_trabalho">
           </div>
-          <div class="col-xs-2">
+          <div class="col-sm-2">
             <label for="uoOrc"> UO
             </label>
             <input type="text"  
@@ -225,7 +246,7 @@
               formControlName="uo">
           </div>
 
-          <div class="col-xs-4">
+          <div class="col-sm-2">
             <label for="ugResponsavelOrc"> UG Responsável
             </label>
             <input type="text"  
@@ -233,31 +254,45 @@
               placeholder="160101" 
               formControlName="ug_responsavel">
           </div>
-        <div class="form-group col-sm-10">
-          <label for="planoInternoOrc"> Plano interno:
-          </label>
-            <input class="form-control" 
-              type="text"  
-              id="planoInternoOrc" 
-              placeholder="4210008312C" 
-              formControlName="plano_interno">
-        </div> 
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-12">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="planoInternoOrc"> Plano interno:
+                </label>
+                  <input class="form-control form-control-inline" 
+                    type="text"  
+                    id="planoInternoOrc" 
+                    placeholder="4210008312C" 
+                    formControlName="plano_interno">
+              </div>
+            </div>
 
-        <div class="form-group col-sm-10">
-          <button class="btn btn-default">>></button>
+            <div class="col-sm-1">
+              <div class="form-group">
+                <button class="btn btn-default">>></button>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group ">
+                
+                  <input class="form-control" 
+                    type="text"  
+                    placeholder="CONCESSAO DE AUXILIO TRANSPORTE">
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="form-group col-sm-10">
-          
-            <input class="form-control" 
-              type="text"  
-              placeholder="CONCESSAO DE AUXILIO TRANSPORTE">
-        </div>
-        <div class="form-group col-sm-12">
+    <div class="row">
+      <div class="col-sm-12">
         <div class="col-sm-4">
           <label for="naturezaDespesaOrc"> Natureza da Despesa:
           </label>
-            <input class="form-control" 
+            <input class="form-control form-control-inline" 
               type="text"  
               id="naturezaDespesaOrc" 
               placeholder="333913900" 
@@ -273,42 +308,44 @@
               type="text"  
               placeholder="OUTROS SERV. TERC. PJ-OP.INTRA ORCAMENTARIA" >
         </div>
-        </div>
+      </div>
+    </div>
+    
 
-        <div class="form-group col-sm-10">
-          <label for="fonteRecursoOrc"> Fonte de Recurso:
-          </label>
-            <input class="form-control" 
-              type="text"  
-              id="fonteRecursoOrc" 
-              placeholder="0101000000" 
-              formControlName="fonte_recurso">
-        </div> 
+      <div class="form-group col-sm-10">
+        <label for="fonteRecursoOrc"> Fonte de Recurso:
+        </label>
+          <input class="form-control" 
+            type="text"  
+            id="fonteRecursoOrc" 
+            placeholder="0101000000" 
+            formControlName="fonte_recurso">
+      </div> 
 
-        <div class="form-group col-sm-10">
-          <button class="btn btn-default">>></button>
-        </div>
+      <div class="form-group col-sm-10">
+        <button class="btn btn-default">>></button>
+      </div>
 
-        <div class="form-group col-sm-10">
-            <input class="form-control" 
-              type="text"  
-              placeholder="RECURSOS PROPRIOS" >
-        </div>
+      <div class="form-group col-sm-10">
+          <input class="form-control" 
+            type="text"  
+            placeholder="RECURSOS PROPRIOS" >
+      </div>
 
-        <div class="form-group col-sm-10">
-          <label for="valorOrc"> Valor:
-          </label>
-            <input class="form-control" 
-              type="text"  
-              id="valorOrc" 
-              placeholder="1.937.286,45" 
-              formControlName="valor">
-        </div> 
-        <div class="form-group col-sm-10">
-          <button class="btn btn-default">Verificar Disponibilidade</button>
-        </div>
-      </div> <!-- Fim FormGroup Orçamentario -->
-    </collapsible-panel>
+      <div class="form-group col-sm-10">
+        <label for="valorOrc"> Valor:
+        </label>
+          <input class="form-control" 
+            type="text"  
+            id="valorOrc" 
+            placeholder="1.937.286,45" 
+            formControlName="valor">
+      </div> 
+      <div class="form-group col-sm-10">
+        <button class="btn btn-default">Verificar Disponibilidade</button>
+      </div>
+    </div> <!-- Fim FormGroup Orçamentario -->
+  </collapsible-panel>
    
 
       
