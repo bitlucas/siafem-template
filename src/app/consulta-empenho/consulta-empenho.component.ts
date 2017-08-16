@@ -335,7 +335,7 @@ export class ConsultaEmpenhoComponent implements OnInit {
 
  
    limparEmpenho(){
-   		this.empenho = new Empenho();
+       this.empenho = new Empenho();
    }
    get formItens() { return <FormArray>this.empenhoForm.get('discriminacao').get('itens'); }
 
