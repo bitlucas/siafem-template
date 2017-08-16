@@ -7,7 +7,11 @@
 <div class="container">
 <!-- Início Empenho Form -->
 
-  <collapsible-panel title="Novo Empenho" visible="true">
+<wizard-step title="Passo 1" navigationSymbol="1">
+
+<!-- Início Empenho>Credor form -->
+
+<collapsible-panel title="Novo Empenho" visible="true">
     <div class="row">
       <div class="col-sm-12">
         <div class="col-sm-5">
@@ -116,11 +120,6 @@
 
 </collapsible-panel>
 
-
-
-<wizard-step title="Passo 1" navigationSymbol="1">
-
-<!-- Início Empenho>Credor form -->
   <collapsible-panel title="Credor">
   <div class="container" formGroupName="credor">
       
@@ -373,22 +372,26 @@
   </wizard-step>
   <wizard-step title="Passo 2" optionalStep >
     
-      <collapsible-panel title="DADOS COMPLEMENTARES (CONTRATUAIS, LEGAIS, ETC.">
+    <collapsible-panel title="DADOS COMPLEMENTARES (CONTRATUAIS, LEGAIS, ETC.">
     
-        <div class="container" formGroupName="complementar">  
-          <div class="form-group col-sm-10">
-            <label for="acordoComp"> Acordo:
-            </label>
-              <input class="form-control" 
-                type="text"  
-                id="acordoComp" 
-                placeholder="acordo" 
-                formControlName="acordo">
-          </div>
-
-            <div class="form-group col-sm-10">
-              <label for="licitacaoComp"> Licitação:
-              </label>
+      <div class="container-fluid" formGroupName="complementar">  
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="acordoComp"> Acordo:
+                </label>
+                <input class="form-control" 
+                  type="text"  
+                  id="acordoComp" 
+                  placeholder="acordo" 
+                  formControlName="acordo">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="licitacaoComp"> Licitação:
+                </label>
                 <select class="form-control" id="licitacaoComp" formControlName="licitacao">
                   <option>1</option>
                   <option>2</option>
@@ -396,86 +399,90 @@
                   <option>4</option>
                   <option>5</option>
                 </select>
-          
+              </div>
             </div>
-          <div class="form-group col-sm-10">
-            <label for="origemComp"> Origem Material:
-            </label>
-              <input class="form-control" 
-                type="text"  
-                id="origemComp" 
-                placeholder="Origem do Material" 
-                formControlName="origem_material">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="origemComp"> Origem Material:
+                </label>
+                  <input class="form-control" 
+                    type="text"  
+                    id="origemComp" 
+                    placeholder="Origem do Material" 
+                    formControlName="origem_material">
+              </div>
+            </div>
           </div>
-
-          <br>
-          <div class="form-group col-sm-10">
-            <label for="refLegalComp"> Referência Legal:
-            </label>
-              <input class="form-control" 
-                type="text"  
-                id="refLegalComp" 
-                placeholder="Referência Legal" 
-                formControlName="referencia_legal">
-          
-          </div>
-          <div class="form-group col-sm-10">
-            <label for="numProcComp"> Número do Processo:
-            </label>
-              <input class="form-control" 
-                type="text"  
-                id="numProcComp" 
-                placeholder="Número do Processo" 
-                formControlName="numero_processo">
-          </div>
-
-          <br>
-          <div class="form-group col-sm-10">
-            <label for="numConvenioComp"> Número Convênio:
-            </label>
-              <input class="form-control" 
-                type="text"  
-                id="numConvenioComp" 
-                placeholder="Número Convênio" 
-                formControlName="numero_convenio">
-          
-          </div>
-          <div class="form-group col-sm-10">
-            <label for="aditConvenioComp"> Aditivo Convênio:
-            </label>
-              <input class="form-control" 
-                type="text"  
-                id="aditConvenioComp" 
-                placeholder="Aditivo Convênio" 
-                formControlName="aditivo_convenio">
-          </div>
-
-          <br>
-          <div class="form-group col-sm-10">
-            <label for="numContratoComp"> Número Contrato:
-            </label>
-              <input class="form-control" 
-                type="text"  
-                id="numContratoComp" 
-                placeholder="Número Contrato" 
-                formControlName="numero_contrato">
-          
-          </div>
-          <div class="form-group col-sm-10">
-            <label for="aditContratoComp"> Aditivo Contrato:
-            </label>
-              <input class="form-control" 
-                type="text"  
-                id="aditContratoComp" 
-                placeholder="Aditivo Contrato" 
-                formControlName="aditivo_contrato">
-          </div>
-        
         </div>
-    </collapsible-panel>
-    
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="refLegalComp"> Referência Legal:
+                </label>
+                  <input class="form-control" 
+                    type="text"  
+                    id="refLegalComp" 
+                    placeholder="Referência Legal" 
+                    formControlName="referencia_legal">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="numProcComp"> Número do Processo:
+                </label>
+                  <input class="form-control" 
+                    type="text"  
+                    id="numProcComp" 
+                    placeholder="Número do Processo" 
+                    formControlName="numero_processo">
+              </div>
+            </div>
+                  <br>
+                  <div class="form-group col-sm-10">
+                    <label for="numConvenioComp"> Número Convênio:
+                    </label>
+                      <input class="form-control" 
+                        type="text"  
+                        id="numConvenioComp" 
+                        placeholder="Número Convênio" 
+                        formControlName="numero_convenio">
+                  
+                  </div>
+                  <div class="form-group col-sm-10">
+                    <label for="aditConvenioComp"> Aditivo Convênio:
+                    </label>
+                      <input class="form-control" 
+                        type="text"  
+                        id="aditConvenioComp" 
+                        placeholder="Aditivo Convênio" 
+                        formControlName="aditivo_convenio">
+                  </div>
 
-
+                  <br>
+                  <div class="form-group col-sm-10">
+                    <label for="numContratoComp"> Número Contrato:
+                    </label>
+                      <input class="form-control" 
+                        type="text"  
+                        id="numContratoComp" 
+                        placeholder="Número Contrato" 
+                        formControlName="numero_contrato">
+                  
+                  </div>
+                  <div class="form-group col-sm-10">
+                    <label for="aditContratoComp"> Aditivo Contrato:
+                    </label>
+                      <input class="form-control" 
+                        type="text"  
+                        id="aditContratoComp" 
+                        placeholder="Aditivo Contrato" 
+                        formControlName="aditivo_contrato">
+                  </div>
+              </div>
+            </div>
+          </div>
+        </collapsible-panel>
     <div class="container">
       <div class="panel panel-primary">
       <div class="panel-heading">Dados complementares (CONTRATUAIS, LEGAIS, ETC.) </div>

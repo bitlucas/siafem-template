@@ -18,7 +18,10 @@ import {BrowserModule} from '@angular/platform-browser'
   `
 })
 export class Collapse {
-  @Input() visible: false;
+  @Input() visible: true;
   @Input() title: string;
   
+  constructor(){
+    this.visible = true;
+  }
 }
