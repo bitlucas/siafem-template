@@ -301,13 +301,17 @@
           </div>
 
           <div class="col-sm-1">
-            <button class="btn btn-default">>></button>
+            <div class="form-group">
+              <button class="btn btn-default">>></button>
+            </div>
           </div>
 
           <div class="col-sm-6">
+            <div class="form-group">
               <input class="form-control" 
                 type="text"  
                 placeholder="OUTROS SERV. TERC. PJ-OP.INTRA ORCAMENTARIA" >
+            </div>
           </div>
         </div>
       </div>
@@ -316,23 +320,29 @@
      <div class="row">
       <div class="col-sm-12">
         <div class="col-sm-4">
-          <label for="fonteRecursoOrc"> Fonte de Recurso:
-          </label>
-            <input class="form-control form-control-inline" 
-              type="text"  
-              id="fonteRecursoOrc" 
-              placeholder="0101000000" 
-              formControlName="fonte_recurso">
-        </div> 
-
-        <div class="form-group col-sm-1">
-          <button class="btn btn-default">>></button>
+          <div class="form-group">  
+            <label for="fonteRecursoOrc"> Fonte de Recurso:
+            </label>
+              <input class="form-control form-control-inline" 
+                type="text"  
+                id="fonteRecursoOrc" 
+                placeholder="0101000000" 
+                formControlName="fonte_recurso">
+          </div>
         </div>
 
-        <div class="form-group col-sm-6">
+        <div class="col-sm-1">
+          <div class="form-group">
+            <button class="btn btn-default">>></button>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="form-group">
             <input class="form-control" 
               type="text"  
               placeholder="RECURSOS PROPRIOS" >
+          </div>
         </div>
       </div>
     </div>
@@ -388,6 +398,19 @@
                   formControlName="acordo">
               </div>
             </div>
+            
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="origemComp"> Origem Material:
+                </label>
+                  <input class="form-control" 
+                    type="text"  
+                    id="origemComp" 
+                    placeholder="Origem do Material" 
+                    formControlName="origem_material">
+              </div>
+            </div>
+
             <div class="col-sm-4">
               <div class="form-group">
                 <label for="licitacaoComp"> Licitação:
@@ -399,17 +422,6 @@
                   <option>4</option>
                   <option>5</option>
                 </select>
-              </div>
-            </div>
-            <div class="col-sm-4">
-              <div class="form-group">
-                <label for="origemComp"> Origem Material:
-                </label>
-                  <input class="form-control" 
-                    type="text"  
-                    id="origemComp" 
-                    placeholder="Origem do Material" 
-                    formControlName="origem_material">
               </div>
             </div>
           </div>
@@ -438,88 +450,96 @@
                     formControlName="numero_processo">
               </div>
             </div>
-                  <br>
-                  <div class="form-group col-sm-10">
-                    <label for="numConvenioComp"> Número Convênio:
-                    </label>
-                      <input class="form-control" 
-                        type="text"  
-                        id="numConvenioComp" 
-                        placeholder="Número Convênio" 
-                        formControlName="numero_convenio">
-                  
-                  </div>
-                  <div class="form-group col-sm-10">
-                    <label for="aditConvenioComp"> Aditivo Convênio:
-                    </label>
-                      <input class="form-control" 
-                        type="text"  
-                        id="aditConvenioComp" 
-                        placeholder="Aditivo Convênio" 
-                        formControlName="aditivo_convenio">
-                  </div>
-
-                  <br>
-                  <div class="form-group col-sm-10">
-                    <label for="numContratoComp"> Número Contrato:
-                    </label>
-                      <input class="form-control" 
-                        type="text"  
-                        id="numContratoComp" 
-                        placeholder="Número Contrato" 
-                        formControlName="numero_contrato">
-                  
-                  </div>
-                  <div class="form-group col-sm-10">
-                    <label for="aditContratoComp"> Aditivo Contrato:
-                    </label>
-                      <input class="form-control" 
-                        type="text"  
-                        id="aditContratoComp" 
-                        placeholder="Aditivo Contrato" 
-                        formControlName="aditivo_contrato">
-                  </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="numConvenioComp"> Número Convênio:
+                </label>
+                  <input class="form-control" 
+                    type="text"  
+                    id="numConvenioComp" 
+                    placeholder="Número Convênio" 
+                    formControlName="numero_convenio">
               </div>
             </div>
           </div>
-        </collapsible-panel>
-    <div class="container">
-      <div class="panel panel-primary">
-      <div class="panel-heading">Dados complementares (CONTRATUAIS, LEGAIS, ETC.) </div>
-    
-      <div class="panel-body" formGroupName="dados_entrega">
-       <div class="form-group col-sm-10">
-        <label for="localComp"> Local:
-        </label>
-          <input class="form-control" 
-            type="text"  
-            id="localComp" 
-            placeholder="Local" 
-            formControlName="local">
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="aditConvenioComp"> Aditivo Convênio:
+                </label>
+                  <input class="form-control" 
+                    type="text"  
+                    id="aditConvenioComp" 
+                    placeholder="Aditivo Convênio" 
+                    formControlName="aditivo_convenio">
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="numContratoComp"> Número Contrato:
+                </label>
+                  <input class="form-control" 
+                    type="text"  
+                    id="numContratoComp" 
+                    placeholder="Número Contrato" 
+                    formControlName="numero_contrato">
+              
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <label for="aditContratoComp"> Aditivo Contrato:
+                </label>
+                  <input class="form-control" 
+                    type="text"  
+                    id="aditContratoComp" 
+                    placeholder="Aditivo Contrato" 
+                    formControlName="aditivo_contrato">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <br>
-      <div class="form-group col-sm-10">
-        <label for="dataComp"> Data:
-        </label>
-          <input class="form-control" 
-            type="text"  
-            id="dataComp" 
-            placeholder="Data" 
-            formControlName="data">
-      </div>
-    </div>
-    </div>
-    </div>
+    </collapsible-panel>
+    <collapsible-panel title="DADOS DA ENTREGA">
+      <div class="container-fluid" formGroupName="dados_entrega" >
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="col-sm-4">
+              <div class="form-group">
+      
+                <label for="dataComp"> Data:
+                </label>
+                  <input class="form-control" 
+                    type="text"  
+                    id="dataComp" 
+                    placeholder="Data" 
+                    formControlName="data">
+              </div>
+            </div>
+            <div class="col-sm-8">
+              <div class="form-group">
+                <label for="localComp"> Local:
+                </label>
+                  <input class="form-control" 
+                    type="text"  
+                    id="localComp" 
+                    placeholder="Local" 
+                    formControlName="local">
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div> 
     
+  </collapsible-panel>
 
-  <br>
-  <div class="form-group col-sm-10">
-    <div class="col-md-12l"> 
-
-      <button type="button" class="btn btn-warning" previousStep>Anterior</button>
-      <button type="button" class="btn btn-primary" [disabled]="!empenhoForm.get('complementar').valid" nextStep>Próximo</button>
-   </div> 
+  <div class="col-sm-4">
+    <button type="button" class="btn btn-warning" previousStep>Anterior</button>
+    <button type="button" class="btn btn-primary" [disabled]="!empenhoForm.get('complementar').valid" nextStep>Próximo</button>
   </div>  
   </wizard-step>
   <wizard-step title="Passo 3">
