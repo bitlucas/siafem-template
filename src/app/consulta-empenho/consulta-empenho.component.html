@@ -4,7 +4,7 @@
 
 <wizard navBarLayout="large-filled-symbols">
 
-<div class="container">
+<div class="container-fluid">
 <!-- Início Empenho Form -->
 
 <wizard-step title="Passo 1" navigationSymbol="1">
@@ -388,7 +388,7 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="col-sm-4">
-              <div class="form-group">
+              <div class="form-group col-sm-10">
                 <label for="acordoComp"> Acordo:
                 </label>
                 <input class="form-control" 
@@ -400,7 +400,7 @@
             </div>
             
             <div class="col-sm-4">
-              <div class="form-group">
+              <div class="form-group col-sm-10">
                 <label for="origemComp"> Origem Material:
                 </label>
                   <input class="form-control" 
@@ -412,7 +412,7 @@
             </div>
 
             <div class="col-sm-4">
-              <div class="form-group">
+              <div class="form-group col-sm-10">
                 <label for="licitacaoComp"> Licitação:
                 </label>
                 <select class="form-control" id="licitacaoComp" formControlName="licitacao">
@@ -429,7 +429,7 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="col-sm-4">
-              <div class="form-group">
+              <div class="form-group col-sm-10">
                 <label for="refLegalComp"> Referência Legal:
                 </label>
                   <input class="form-control" 
@@ -440,7 +440,7 @@
               </div>
             </div>
             <div class="col-sm-4">
-              <div class="form-group">
+              <div class="form-group col-sm-10">
                 <label for="numProcComp"> Número do Processo:
                 </label>
                   <input class="form-control" 
@@ -451,7 +451,7 @@
               </div>
             </div>
             <div class="col-sm-4">
-              <div class="form-group">
+              <div class="form-group col-sm-10">
                 <label for="numConvenioComp"> Número Convênio:
                 </label>
                   <input class="form-control" 
@@ -466,7 +466,7 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="col-sm-4">
-              <div class="form-group">
+              <div class="form-group col-sm-10">
                 <label for="aditConvenioComp"> Aditivo Convênio:
                 </label>
                   <input class="form-control" 
@@ -477,7 +477,7 @@
               </div>
             </div>
             <div class="col-sm-4">
-              <div class="form-group">
+              <div class="form-group col-sm-10">
                 <label for="numContratoComp"> Número Contrato:
                 </label>
                   <input class="form-control" 
@@ -489,7 +489,7 @@
               </div>
             </div>
             <div class="col-sm-4">
-              <div class="form-group">
+              <div class="form-group col-sm-10">
                 <label for="aditContratoComp"> Aditivo Contrato:
                 </label>
                   <input class="form-control" 
@@ -508,7 +508,7 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="col-sm-4">
-              <div class="form-group">
+              <div class="form-group col-sm-10">
       
                 <label for="dataComp"> Data:
                 </label>
@@ -536,201 +536,239 @@
       </div> 
     
   </collapsible-panel>
-
-  <div class="col-sm-4">
-    <button type="button" class="btn btn-warning" previousStep>Anterior</button>
-    <button type="button" class="btn btn-primary" [disabled]="!empenhoForm.get('complementar').valid" nextStep>Próximo</button>
-  </div>  
+  <div class="row">
+    <div class="col-sm-12 col-sm-offset-3">
+      <div class="col-sm-4">
+        
+        <button type="button" class="btn btn-warning" previousStep>Anterior</button>
+      </div>
+      
+      <div class="col-sm-4">
+        
+        <button type="button" class="btn btn-primary" [disabled]="!empenhoForm.get('complementar').valid" nextStep>Próximo</button>
+      </div>
+      
+    </div>
+  </div>
   </wizard-step>
   <wizard-step title="Passo 3">
-
-    <div class="container">
-    <div class="panel panel-primary">
-    <div class="panel-heading">Valor da NE</div>
-    <div class="panel-body" formGroupName="item"> 
-    
-      <div class="form-group col-sm-10">
-        <label for="valorNeItem"> Valor da NE:
-        </label>
-          <input class="form-control" 
-            type="text"  
-            id="valorNeItem" 
-            placeholder="1.937.286,45" 
-            formControlName="valor_ne">
-      </div>
-      <div class="form-group col-sm-10">
-        <label for="numSubItem"> Nº DE SUBITENS:
-        </label>
-          <input class="form-control" 
-            type="text"  
-            id="numSubItem" 
-            placeholder="9" 
-            formControlName="num_subitens">
-      </div>
-       <div class="form-group col-sm-10">
-        <label for="totalSubItem"> TOTAL SUBITENS:
-        </label>
-          <input class="form-control" 
-            type="text"  
-            id="totalSubItem" 
-            placeholder="77.009,93" 
-            formControlName="total_subitens">
-      </div>
-        <div class="form-group col-sm-10">
-          <label for="restanteItem"> RESTANTE:
-          </label>
-            <input class="form-control" 
-              type="text"  
-              id="restanteItem" 
-              placeholder="1.860.276,52" 
-              formControlName="restante">
-        </div>
-        <div class="form-group col-sm-10">
-          <label for="codigoItem"> Código:
-          </label>
-            <select class="form-control" id="codigoItem" formControlName="codigo">
-              <option>68- RESTITUIÇÕES DIVERSAS</option>
-              <option>68- RESTITUIÇÕES DIVERSAS</option>
-              <option>68- RESTITUIÇÕES DIVERSAS</option>
-              <option>68- RESTITUIÇÕES DIVERSAS</option>
-              <option>68- RESTITUIÇÕES DIVERSAS</option>
-            </select>
-      
-        </div>
-        <div class="form-group col-sm-10">
-          <label for="valorItem"> Valor:
-          </label>
-            <input class="form-control" 
-              type="text"  
-              id="valorItem" 
-              placeholder="154.283,69" 
-              formControlName="valor">
-        </div>
-        </div>
-        </div>
-
-     
-   
-    <div class="panel panel-primary">
-    
-    <div class="panel-body">   
-      <div class="form-group col-sm-10">
-        <button class="btn btn-default btn-xs" data-title="Validar"  >Validar</button>
-      </div>
-      <div class="form-group col-sm-10">
-        <button class="btn btn-success btn-xs" data-title="Add" (click)="addSubItem()"><span class="glyphicon glyphicon-plus"></span></button>
-      </div>
-    
-    
-      <table id="mytable" class="table table-bordered table-striped col-md-12">
-                       
-        <thead>
-          <th>Sales ID</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Designation</th>
-          <th>Mobile Numberl</th>
-          <th>Delete</th>
-        </thead>
-        <tbody formArrayName="subitens" *ngFor="let subitem of formSubitens.controls; let i = index " >
-          
-          <tr formGroupName="{{i}}">
-              <td>Mohsin</td>
-              <td>Irshad</td>
-              <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-              <td>isometric.mohsin@gmail.com</td>
-              <td>+923335586757</td>
-              
-              <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" (click)="removeSubItem()" ><span class="glyphicon glyphicon-trash"></span></button></td>
-
-          <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                  <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
-                </div>
-                <div class="modal-body">
-                   
-                  <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Tem certeza que deseja remover este item?</div>
-                   
-                </div>
-                  <div class="modal-footer ">
-                    <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
-                  </div>
+    <collapsible-panel title="Valor da NE">
+      <div class="container-fluid" formGroupName="item">  
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="col-sm-3">
+              <div class="form-group col-sm-10">
+                <label for="valorNeItem"> Valor da NE:
+                </label>
+                  <input class="form-control" 
+                    type="text"  
+                    id="valorNeItem" 
+                    placeholder="1.937.286,45" 
+                    formControlName="valor_ne">
               </div>
-                <!-- /.modal-content --> 
             </div>
-            <!-- /.modal-dialog --> 
+            <div class="col-sm-3">
+              <div class="form-group col-sm-10">
+                <label for="numSubItem"> Nº DE SUBITENS:
+                </label>
+                  <input class="form-control" 
+                    type="text"  
+                    id="numSubItem" 
+                    placeholder="9" 
+                    formControlName="num_subitens">
+              </div>
+            </div>
+            <div class="col-sm-3">
+               <div class="form-group col-sm-10">
+                <label for="totalSubItem"> TOTAL SUBITENS:
+                </label>
+                  <input class="form-control" 
+                    type="text"  
+                    id="totalSubItem" 
+                    placeholder="77.009,93" 
+                    formControlName="total_subitens">
+              </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group col-sm-10">
+                  <label for="restanteItem"> RESTANTE:
+                  </label>
+                    <input class="form-control" 
+                      type="text"  
+                      id="restanteItem" 
+                      placeholder="1.860.276,52" 
+                      formControlName="restante">
+                </div>
+              </div>
+            </div>
           </div>
-          </tr>
-
-        </tbody>
-            
-      </table>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="col-sm-4">
+                <div class="form-group col-sm-10">
+                  <label for="codigoItem"> Código:
+                  </label>
+                    <select class="form-control" id="codigoItem" formControlName="codigo">
+                      <option>68- RESTITUIÇÕES DIVERSAS</option>
+                      <option>68- RESTITUIÇÕES DIVERSAS</option>
+                      <option>68- RESTITUIÇÕES DIVERSAS</option>
+                      <option>68- RESTITUIÇÕES DIVERSAS</option>
+                      <option>68- RESTITUIÇÕES DIVERSAS</option>
+                    </select>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group col-sm-10">
+                  <label for="valorItem"> Valor:
+                  </label>
+                    <input class="form-control" 
+                      type="text"  
+                      id="valorItem" 
+                      placeholder="154.283,69" 
+                      formControlName="valor">
+              </div>
+            </div>
+            <!-- <div class="col-sm-2">
+              <div class="form-group">
+                <button class="btn btn-default alinhaBtn" data-title="Validar">Validar</button>
+              </div>
+            </div> -->
+            <div class="col-sm-2">
+              <div class="form-group">
+                <button class="btn btn-success alinhaBtn" data-title="Add" (click)="addSubItem()"><span class="glyphicon glyphicon-plus"></span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </collapsible-panel>
+    <div class="container">
+      <div class="panel panel-primary">
       
-    </div>
-    </div>
-    </div>
+        <div class="panel-body">    
+          <table id="mytable" class="table table-bordered table-striped col-md-12">
+                           
+            <thead>
+              <th>Sales ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Designation</th>
+              <th>Mobile Numberl</th>
+              <th>Delete</th>
+            </thead>
+            <tbody formArrayName="subitens" *ngFor="let subitem of formSubitens.controls; let i = index " >
+              
+              <tr formGroupName="{{i}}">
+                  <td>Mohsin</td>
+                  <td>Irshad</td>
+                  <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
+                  <td>isometric.mohsin@gmail.com</td>
+                  <td>+923335586757</td>
+                  
+                  <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" (click)="removeSubItem()" ><span class="glyphicon glyphicon-trash"></span></button></td>
 
-    
-    <div class="form-group ">
-      <div class="col-md-12l"> 
-        <button type="button" class="btn btn-warning" previousStep>Anterior</button>
-        <button type="button" class="btn btn-primary" (click)="addParcelas()" [disabled]="!empenhoForm.get('subitens').valid" nextStep>Próximo</button>
+              <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                      <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
+                    </div>
+                    <div class="modal-body">
+                       
+                      <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Tem certeza que deseja remover este item?</div>
+                       
+                    </div>
+                      <div class="modal-footer ">
+                        <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+                      </div>
+                  </div>
+                    <!-- /.modal-content --> 
+                </div>
+                <!-- /.modal-dialog --> 
+              </div>
+              </tr>
+
+            </tbody>
+                
+          </table>
+          
+        </div>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-sm-12 col-sm-offset-3">
+        <div class="col-sm-4">
+          
+          <button type="button" class="btn btn-warning" previousStep>Anterior</button>
+        </div>
+        
+        <div class="col-sm-4">
+          
+          <button type="button" class="btn btn-primary" (click)="addParcelas()" [disabled]="!empenhoForm.get('subitens').valid"  nextStep>Próximo</button>
+        </div>
+        
+      </div>
+    </div>
+
   </wizard-step>
   <wizard-step title="Passo 4">
+  <collapsible-panel title="Valor da NE">
+    <div class="container-fluid">  
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="col-sm-3">
+            <div class="form-group col-sm-10">
+              <label for="valorNeEmp"> VALOR DA NE:
+              </label>
+                <input class="form-control" 
+                  type="text"
+                  disabled="true" 
+                  id="valorNeEmp" 
+                  value="{{empenhoForm.controls['item'].controls['valor_ne'].value}}">
+            </div>
+          </div>
 
-  <div class="container">
-  <div class="panel panel-primary">
-  <div class="panel-heading"></div>
-  <div class="panel-body"> 
-  
-    <div class="form-group col-sm-10">
-      <label for="valorNeEmp"> VALOR DA NE:
-      </label>
-        <input class="form-control" 
-          type="text"
-          disabled="true" 
-          id="valorNeEmp" 
-          value="{{empenhoForm.controls['item'].controls['valor_ne'].value}}">
-    </div>
+          <div class="col-sm-3">
+            <div class="form-group col-sm-10">
+              <label for="numParcEmp">Nº PARCELAS:
+              </label>
+                <input class="form-control" 
+                  type="text"
+                  disabled="true" 
+                  id="numParcEmp" 
+                  value="{{total_parcelas}}">
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="form-group col-sm-10">
+              <label for="totalParcEmp"> TOTAL PARCELAS:
+              </label>
+              <input class="form-control" 
+                type="text" 
+                disabled="true" 
+                id="totalParcEmp" 
+                value="{{empenhoForm.controls['total_parcelas'].value}}">
+            </div>
+          </div>
 
-    <div class="form-group col-sm-10">
-      <label for="numParcEmp">Nº PARCELAS:
-      </label>
-        <input class="form-control" 
-          type="text"
-          disabled="true" 
-          id="numParcEmp" 
-          value="{{total_parcelas}}">
+          <div class="col-sm-3">
+            <div class="form-group col-sm-10">
+              <label for="restanteEmp"> RESTANTE:
+              </label>
+                <input class="form-control" 
+                  type="text"  
+                  disabled="true" 
+                  id="restanteEmp" 
+                  value="{{empenhoForm.controls['item'].controls['restante'].value}}">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="form-group col-sm-10">
-          <label for="totalParcEmp"> TOTAL PARCELAS:
-          </label>
-            <input class="form-control" 
-              type="text" 
-              disabled="true" 
-              id="totalParcEmp" 
-              value="{{empenhoForm.controls['total_parcelas'].value}}">
-    </div>
-
-    <div class="form-group col-sm-10">
-          <label for="restanteEmp"> RESTANTE:
-          </label>
-            <input class="form-control" 
-              type="text"  
-              disabled="true" 
-              id="restanteEmp" 
-              value="{{empenhoForm.controls['item'].controls['restante'].value}}">
-    </div>
-
-  </div>
-  </div>
-  </div>
+  </collapsible-panel>
   <div class="container">
   <div class="panel panel-primary">
   <div class="panel-heading"></div>
@@ -764,132 +802,153 @@
     </div>
     </div>
 
-   <div class="form-group">
-    <div class="col-md-12l"> 
-      <button type="button" class="btn btn-warning" previousStep>Anterior</button>
-      <button type="button" class="btn btn-primary" nextStep>Próximo</button>
+    <div class="row">
+      <div class="col-sm-12 col-sm-offset-3">
+        <div class="col-sm-4">
+          
+          <button type="button" class="btn btn-warning" previousStep>Anterior</button>
+        </div>
+        
+        <div class="col-sm-4">
+          
+          <button type="button" class="btn btn-primary" nextStep>Próximo</button>
+        </div>
+        
+      </div>
     </div>
-  </div>
+   
   </wizard-step>
   <wizard-step title="Passo 5">
-
-  <div class="container">
-  <div class="panel panel-primary">
-  <div class="panel-heading"></div>
-  <div class="panel-body"> 
-    <div class="form-group col-sm-10">
-      <label for="valorNeEmp"> VALOR DA NE:
-      </label>
-        <input class="form-control" 
-          type="text"
-          disabled="true" 
-          id="valorNeEmp" 
-          value="{{empenhoForm.controls['item'].controls['valor_ne'].value}}">
-    </div>
-
-    <div class="form-group col-sm-10">
-      <label for="numParcEmp">Nº PARCELAS:
-      </label>
-        <input class="form-control" 
-          type="text"
-          disabled="true" 
-          id="numParcEmp" 
-          value="{{total_parcelas}}">
-    </div>
-    <div class="form-group col-sm-10">
-          <label for="totalParcEmp"> TOTAL PARCELAS:
-          </label>
-            <input class="form-control" 
-              type="text" 
-              disabled="true" 
-              id="totalParcEmp" 
-              value="{{empenhoForm.controls['total_parcelas'].value}}">
-    </div>
-
-    <div class="form-group col-sm-10">
-          <label for="restanteEmp"> RESTANTE:
-          </label>
-            <input class="form-control" 
-              type="text"  
-              disabled="true" 
-              id="restanteEmp" 
-              value="{{empenhoForm.controls['item'].controls['restante'].value}}">
-    </div>
-
-  </div>
-  </div>
-  </div>
-
-  <div class="container">
-  <div class="panel panel-primary">
-  <div class="panel-heading"></div>
-  <div class="panel-body" formGroupName="discriminacao">
-    <div class="form-group col-sm-10">
-      <label for="valorNeEmp"> Item:
-      </label>
-        <input class="form-control" 
-          type="text"
-          disabled="true" 
-          id="numItem" 
-          value="{{empenhoForm.controls['discriminacao'].controls['item'].value}}">
-    </div>
-
-    <div class="form-group col-sm-10">
-      <label for="unidMedidaItem">Unid. Medida:
-      </label>
-        <input class="form-control" 
-          type="text"
-          
-          id="unidMedidaItem" 
-          formControlName="unidade_medida">
-    </div>
-    <div class="form-group col-sm-10">
-          <label for="qtdItem"> Quantidade:
-          </label>
-            <input class="form-control" 
-              type="text" 
-              
-              id="qtdItem" 
-              formControlName="quantidade">
-    </div>
-
-    <div class="form-group col-sm-10">
-          <label for="valorUnitItem"> Valor Unitário:
-          </label>
-            <input class="form-control" 
-              type="text"  
-              id="valorUnitItem" 
-              formControlName="valor_unitario">
-    </div>
-
-    <div class="form-group col-sm-10">
-          <label for="valorTotItem"> Valor Total:
-          </label>
-            <input class="form-control" 
-              type="text"  
-              id="valorTotItem" 
-              formControlName="valor_total">
-    </div>
-
-    <br>
-
-    <div class="form-group col-sm-10">
-          <label for="descItem"> Descrição:
-          </label>
-            <textarea class="form-control" 
-              
-              id="descItem" 
-              formControlName="descricao">
-            </textarea>
-    </div>
-
-    <div class="form-group col-sm-10">
-        <button class="btn btn-success btn-xs" data-title="Add" (click)="addItem(empenhoForm.get('discriminacao'))"><span class="glyphicon glyphicon-plus"></span></button>
+    <collapsible-panel title="Discriminação">
+      <div class="container-fluid" formGroupName="discriminacao"> 
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="col-sm-3">
+              <div class="form-group col-sm-10">
+                <label for="valorNeEmp"> VALOR DA NE:
+                </label>
+                  <input class="form-control" 
+                    type="text"
+                    disabled="true" 
+                    id="valorNeEmp" 
+                    value="{{empenhoForm.controls['item'].controls['valor_ne'].value}}">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group col-sm-10">
+                <label for="numParcEmp">Nº PARCELAS:
+                </label>
+                  <input class="form-control" 
+                    type="text"
+                    disabled="true" 
+                    id="numParcEmp" 
+                    value="{{total_parcelas}}">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group col-sm-10">
+                <label for="totalParcEmp"> TOTAL PARCELAS:
+                </label>
+                <input class="form-control" 
+                  type="text" 
+                  disabled="true" 
+                  id="totalParcEmp" 
+                  value="{{empenhoForm.controls['total_parcelas'].value}}">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group col-sm-10">
+                <label for="restanteEmp"> RESTANTE:
+                </label>
+                  <input class="form-control" 
+                    type="text"  
+                    disabled="true" 
+                    id="restanteEmp" 
+                    value="{{empenhoForm.controls['item'].controls['restante'].value}}">
+              </div>
+            </div>
+          </div> 
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="col-sm-2">
+              <div class="form-group col-sm-10">
+                <label for="valorNeEmp"> Item:
+                </label>
+                  <input class="form-control" 
+                    type="text"
+                    disabled="true" 
+                    id="numItem" 
+                    value="{{empenhoForm.controls['discriminacao'].controls['item'].value}}">
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group col-sm-10">
+                <label for="unidMedidaItem">Unid. Medida:
+                </label>
+                <input class="form-control" 
+                  type="text"
+                  id="unidMedidaItem" 
+                  formControlName="unidade_medida">
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group col-sm-10">
+                <label for="qtdItem"> Quantidade:
+                </label>
+                <input class="form-control" 
+                  type="text" 
+                  id="qtdItem" 
+                  formControlName="quantidade">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group col-sm-10">
+                <label for="valorUnitItem"> Valor Unitário:
+                </label>
+                <input class="form-control" 
+                  type="text"  
+                  id="valorUnitItem" 
+                  formControlName="valor_unitario">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group col-sm-10">
+                <label for="valorTotItem"> Valor Total:
+                </label>
+                  <input class="form-control" 
+                    type="text"  
+                    id="valorTotItem" 
+                    formControlName="valor_total">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="col-sm-10">
+              <div class="form-group col-sm-10">
+                <label for="descItem"> Descrição:
+                </label>
+                  <textarea class="form-control" 
+                    
+                    id="descItem" 
+                    formControlName="descricao">
+                  </textarea>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group col-sm-2">
+                <button class="btn btn-success alinhaBtn" data-title="Add" (click)="addItem(empenhoForm.get('discriminacao'))"><span class="glyphicon glyphicon-plus"></span></button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </collapsible-panel>
+    
 
-  </div>
-  </div>
-  </div>
+    
 
   <div class="container">
   <div class="panel panel-primary">
@@ -948,12 +1007,21 @@
     </div>
     </div>
     </div>
-   <div class="form-group">
-    <div class="col-md-12l"> 
-      <button type="button" class="btn btn-warning" previousStep>Anterior</button>
-      <button type="button" class="btn btn-success">Gerar Empenho</button>
+
+    <div class="row">
+      <div class="col-sm-12 col-sm-offset-3">
+        <div class="col-sm-4">
+          
+          <button type="button" class="btn btn-warning" previousStep>Anterior</button>
+        </div>
+        
+        <div class="col-sm-4">
+          
+          <button type="button" class="btn btn-success">Gerar Empenho</button>
+        </div>
+        
+      </div>
     </div>
-  </div>
   </wizard-step>
 </div>
 </wizard>
