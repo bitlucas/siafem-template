@@ -2,7 +2,7 @@
 
 
 
-<wizard navBarLayout="large-filled-symbols">
+<wizard  navBarLayout="large-filled-symbols">
 
 <div class="container-fluid">
 <!-- Início Empenho Form -->
@@ -17,23 +17,26 @@
         <div class="col-sm-5">
           <div class="form-group">
             <label for="unidadeEmp">Gestão:</label>
-          
-               <input class="form-control" 
-                type="text"  
-                id="gestaoEmp" 
-                placeholder="Gestão" 
-                formControlName="gestao_emp">
+              <select class="form-control" id="gestaoEmp" formControlName="gestao_emp">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
           </div>
         </div>
 
         <div class="col-sm-4 col-sm-offset-1">
           <div class="form-group">
             <label for="unidadeEmp">Unidade Gestora:</label>
-            <input class="form-control" 
-              type="text"  
-              id="unidadeEmp" 
-              placeholder="Unidade Gestora" 
-              formControlName="unidade_gestora" >
+              <select class="form-control" id="unidadeEmp" formControlName="unidade_gestora">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
           </div>
         </div>
       </div>
@@ -175,7 +178,7 @@
               formControlName="favorecido">          
           </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <div class="form-group col-sm-8">
             <label for="tipoEmp"> Gestão:
             </label>
@@ -185,9 +188,9 @@
               placeholder="Gestão" 
               formControlName="gestao_cred">
           </div>
-          </div>
-    </div> <!-- credor -->
-  </collapsible-panel>
+          </div> -->
+      </div> <!-- credor -->
+    </collapsible-panel>
       
       <!-- Fim Empenho>Credor Form -->
 
@@ -510,7 +513,7 @@
             <div class="col-sm-4">
               <div class="form-group col-sm-10">
       
-                <label for="dataComp"> Data:
+                <label for="dataComp"> Data Prevista:
                 </label>
                   <input class="form-control" 
                     type="text"  
@@ -635,7 +638,7 @@
             </div> -->
             <div class="col-sm-2">
               <div class="form-group">
-                <button class="btn btn-success alinhaBtn" data-title="Add" (click)="addSubItem()"><span class="glyphicon glyphicon-plus"></span></button>
+                <button class="btn btn-success alinhaBtn" data-title="Add" (click)="addSubItem(empenhoForm.get('item'))"><span class="glyphicon glyphicon-plus"></span></button>
               </div>
             </div>
           </div>
@@ -654,18 +657,23 @@
               <th>Email</th>
               <th>Designation</th>
               <th>Mobile Numberl</th>
-              <th>Delete</th>
+              <th>Editar</th>
+              <th>Deletar</th>
             </thead>
             <tbody formArrayName="subitens" *ngFor="let subitem of formSubitens.controls; let i = index " >
               
               <tr formGroupName="{{i}}">
                   <td>Mohsin</td>
-                  <td>Irshad</td>
+                  <td>{{item.controls['valor_ne'].value}}</td>
                   <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
                   <td>isometric.mohsin@gmail.com</td>
                   <td>+923335586757</td>
                   
+                  <td><button class="btn btn-primary btn-xs" data-title="Editar" data-toggle="modal" data-target="#edit" (click)="editItem()" ><span class="glyphicon glyphicon-pencil"></span></button></td>
+
                   <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" (click)="removeSubItem()" ><span class="glyphicon glyphicon-trash"></span></button></td>
+
+                  
 
               <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
                 <div class="modal-dialog">
@@ -715,7 +723,7 @@
 
   </wizard-step>
   <wizard-step title="Passo 4">
-  <collapsible-panel title="Valor da NE">
+  <collapsible-panel title="Parcelas">
     <div class="container-fluid">  
       <div class="row">
         <div class="col-sm-12">

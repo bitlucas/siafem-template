@@ -37,7 +37,7 @@ input[type="radio"] {
 .form-control-inline {
 	min-width: 0;
     width: auto;
-    display: inline  !important;
+    display: inline ;
 
 }
 
@@ -63,4 +63,9 @@ input[type="radio"] {
 
 .alinhaBtn{
 	margin-top: 22px;
+}
+
+.horizontal.large-filled-symbols ul.steps-indicator li.done:after {
+    background-color: red;
+    color: black;
 }
