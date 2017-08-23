@@ -25,7 +25,7 @@
                   <option>5 Gestão é label</option> -->
           </div>
         </div>
-
+        
         <div class="col-sm-4 col-sm-offset-1">
           <div class="form-group">
             <label for="unidadeEmp">Unidade Gestora:</label>
@@ -198,8 +198,7 @@
   <collapsible-panel title="Orçamentário" >
     <div class="container" formGroupName="orcamentario">
       <div class="row">
-        <div class="col-sm-8">
-          <div class="col-sm-6">
+          <div class="col-sm-4">
             <div class="form-group">
               <label for="ptResumidoOrc"> PT Resumido:
               </label>
@@ -216,8 +215,7 @@
               <button class="btn btn-default">Buscar Orçamenário</button>
             </div>
           </div>
-        </div>
-      </div>
+         </div>
       
       <div class="row">
         <div class="col-sm-12">
@@ -259,9 +257,44 @@
         </div>
       </div>
 
+      <div class="row">
+        <div class="form-group">
+          <div class="col-sm-3">
+            <label for="gpNaturezaDespesa"> Grupo de Natureza de Despesa:
+            </label>
+          </div>
+        <div class="col-sm-12">
+ 
+          <div class="borda">
+          <label class="radio-inline">
+            <input type="radio" id="p" name="quality[23]" value="pessoal" checked="checked" /> Pessoal (P)
+          </label> 
+          <label class="radio-inline">
+            <input type="radio" id="e" name="quality[23]"  value="equipamento" /> 
+            Equipamento (E)
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="a" name="quality[23]" value="amortizacao" /> 
+            Amortização (A)
+          </label>
+          <label class="radio-inline">
+             <input type="radio" id="todas" name="quality[23]" value="todas" /> Todas
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="c" name="quality[23]" value="desp_correntes" />Outras Despesas Correntes (C)
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="i" name="quality[23]" value="inv_financeiras" /> Inversões Financeiras (I)
+          </label>
+          <label class="radio-inline">
+            <input type="radio" id="x" name="quality[23]" value="outros" /> Outros (X)
+          </label>
+          </div> <!-- borda -->
+        </div>  <!-- col-sm-12 -->
+        </div> <!-- form group -->
+      </div> <!-- row -->
     <div class="row">
-      <div class="col-sm-12">
-          <div class="col-sm-4">
+        <div class="col-sm-4">
             <div class="form-group">
               <label for="planoInternoOrc"> Plano interno:
               </label>
@@ -286,10 +319,8 @@
             </div>
           </div>
         </div>
-      </div>
-
+  
       <div class="row">
-        <div class="col-sm-12">
           <div class="col-sm-4">
             <div class="form-group">
               <label for="naturezaDespesaOrc"> Natureza da Despesa:
@@ -315,12 +346,10 @@
                 placeholder="OUTROS SERV. TERC. PJ-OP.INTRA ORCAMENTARIA" >
             </div>
           </div>
-        </div>
       </div>
     
 
      <div class="row">
-      <div class="col-sm-12">
         <div class="col-sm-4">
           <div class="form-group">  
             <label for="fonteRecursoOrc"> Fonte de Recurso:
@@ -346,10 +375,8 @@
               placeholder="RECURSOS PROPRIOS" >
           </div>
         </div>
-      </div>
     </div>
     <div class="row">
-      <div class="col-sm-12">
         <div class="col-sm-4 col-sm-offset-1">
           <div class="form-group">
             <label for="valorOrc"> Valor:
@@ -366,7 +393,7 @@
             <button class="btn btn-default">Verificar Disponibilidade</button>
           </div>
         </div>
-      </div>
+
     </div>
   </div>
   </collapsible-panel>
